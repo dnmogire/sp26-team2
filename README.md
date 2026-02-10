@@ -15,9 +15,8 @@ FitMatch is a web-based platform designed to help beginners or fitness enthusias
     3. Subscribe to available services - 
     4. Write reviews for subscribed services - 
 
-2. Provider: 
-    1. Create/modify/remove provider profile - Create,   update, or remove trainer profile to show skills, certifications, and/or area of expertise. 
-    2. Create services - Add and modify programs, workout plans, sessions.
-    3. Manage Bookings - View, confirm, or reschedule client sessions and manage schedule.
-    4. Reply to reviews - Reply to client feedback. 
-
+2. Provider:
+   1. Create/modify/remove provider profile - Create, update, or remove trainer profile to show skills, certifications, and/or area of expertise.
+   2. Create services - Add and modify programs, workout plans, sessions.
+   3. View customer statistics - Access dashboard showing total clients, session completion rates, booking history, average ratings, and revenue metrics to track business performance.
+   4. Reply to reviews - Respond to client feedback and reviews to maintain engagement and address concerns.
