@@ -72,25 +72,54 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ### 2.2 Provider Stories
-- **US‑PROV‑001 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-PROV-001** — **Create and manage professional profile**
+  _Story:_ As a provider, I want to create and manage my professional profile with certifications and expertise, so that potential clients can find me and understand my qualifications.
   _Acceptance:_
-  ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
-  ```
+```gherkin
+  Scenario: Provider creates professional profile
+    Given the provider is registering on the platform
+    When provider enters name, certifications, specialties, rate, and availability
+    Then system creates provider account and profile
+    And profile appears in public trainer directory
+    And provider receives confirmation email
+```
 
-- **US‑PROV‑002 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-PROV-002** — **Create and manage services**
+  _Story:_ As a provider, I want to create and manage workout programs and training sessions, so that clients can browse and book my specialized services.
   _Acceptance:_
-  ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
-  ```
+```gherkin
+  Scenario: Provider creates new service offering
+    Given the provider has an active account
+    When provider clicks "Add Service" and enters details (name, description, duration, price, category)
+    Then system saves the service to provider's profile
+    And service becomes visible to customers in search results
+    And provider can edit or deactivate service anytime
+```
+- **US-PROV-003** — **Manage client bookings**
+  _Story:_ As a provider, I want to view, confirm, and reschedule client bookings, so that I can manage my schedule efficiently.
+  _Acceptance:_
+```gherkin
+  Scenario: Provider manages client bookings
+    Given the provider has pending booking requests
+    When provider views bookings dashboard
+    Then system displays tabs for Pending, Confirmed, and Completed sessions
+    And provider can click "Confirm" to accept or "Decline" to reject
+    And provider can propose reschedule for confirmed bookings
+    And calendar updates automatically with confirmed sessions
+```
+
+- **US-PROV-004** — **Reply to client reviews**
+  _Story:_ As a provider, I want to respond to client reviews and feedback, so that I can engage professionally and address concerns publicly.
+  _Acceptance:_
+```gherkin
+  Scenario: Provider replies to client review
+    Given a client has left a review on provider's profile
+    When provider navigates to Reviews section and clicks "Reply"
+    Then provider can write and post a response
+    And reply appears publicly below client's review with timestamp
+    And client receives notification of provider's reply
+    And provider can edit reply within 48 hours
+```
 
 ---
 
