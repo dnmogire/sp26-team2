@@ -23,15 +23,15 @@
 
 
 **Scope (this semester).**
-- <capability 1> User registration/login for both clients and trainers.
-- <capability 2> Filter by specialty, location, or price.
-- <capability 3> Trainer profile management: Set price and availability 
-- <capability 4> Booking system for scheduling sessions.
-- <capability 5> Review system for clients to provide feedback.
+-  User registration/login for both clients and trainers.
+-  Filter by specialty, location, or price.
+-  Trainer profile management: Set price and availability
+-  Booking system for scheduling sessions.
+-  Review system for clients to provide feedback.
 
 **Out of scope (deferred).**
-- <deferred 1> Payment processing
-- <deferred 2> Video calls or virtual sessions
+-  Payment processing
+-  Video calls or virtual sessions
 
 > This document is **requirements‑level** and solution‑neutral; design decisions (UI layouts, API endpoints, schemas) are documented separately.
 
@@ -123,16 +123,25 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
 
 ---
 
-## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+### 3.1 Performance Requirements
+- System shall load trainer search results within 2 seconds.
+- Session booking shall be confirmed within 3 seconds.
+- Platform shall support 500 concurrent users.
 
+### 3.2 Availability Requirements
+- System shall maintain 99% uptime during business hours.
+- Backup of all data shall occur daily.
 ---
 
-## 4. Assumptions, Constraints, and Policies
-- list any rules, policies, assumptions, etc.
+### Assumptions
+- Users have reliable internet access
+- Trainers possess valid certifications
+- Platform accessed via web browsers
+
+### Constraints
+- One semester development timeline (Spring 2026)
+- Two-person development team
+- No third-party payment integration in v1
 
 ---
 
