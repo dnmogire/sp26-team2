@@ -5,6 +5,7 @@ body{
 
 h1, h2, h3{
     margin: 0;
+    text-align: center;
 }
 
 header{
@@ -16,15 +17,55 @@ header{
     color: rgb(7, 6, 6);
 }
 
+
+
 .logo{
-    font-size: 22px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+     font-family: 'Inter', sans-serif;
+}
+
+.logo img{
+    height: 45px;
 }
 
 .navigation{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.browse-link{
+    color: #111;
+    font-weight: 600;;
+}
+
+.signup-btn{
+    background:#c2d8f7;
     color: white;
-    margin-left: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-weight: bold;
+    transition: 2s;
+}
+
+.signup-btn:hover{
+    background: #1e3a8a;
+}
+
+.profile-icon img{
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 2s;
+}
+
+.profile-icon img:hover{
+    border-color: #c2d8f7;
 }
 
 /*Hero area*/
@@ -97,7 +138,7 @@ header{
     padding: 40px 20px 70px;
 }
 
-.trainer-containers{
+.trainer-container{
     margin-top: 25px;
     display: flex;
     justify-content: center;
@@ -111,7 +152,7 @@ header{
     padding: 15px;
     border-radius: 16px;
     box-shadow: 0 4px 12px;
-    transition: 2s;
+    transition: 2s ease;
     text-decoration: none;
     color:black;
 }
@@ -126,10 +167,21 @@ header{
     object-fit: cover;
     border-radius: 12px;
 }
+
 .trainer-card h3{
     margin-top: 30px;
 }
 
+
+.rating{
+    margin-top: 6px;
+    color: gold;
+    font-weight: bold;
+}
+
+.rating span{
+    color: #555
+}
 
 /*footer*/
 footer{
