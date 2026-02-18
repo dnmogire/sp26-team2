@@ -1,0 +1,140 @@
+body{
+  font-family: 'Inter', sans-serif;
+  background: #f6f8fc;
+}
+
+h1, h2, h3{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px, 40px;
+    background: #f9f9fb;
+    color: rgb(7, 6, 6);
+}
+
+.logo{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navigation{
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/*Hero area*/
+.hero{
+    text-align: center;
+    padding: 70px 20px 40px;
+    background-color: #c2d8f7;
+}
+.hero h1{
+    font-size: 35px;
+}
+
+.hero p{
+    color: rgba(0, 0, 0, 0.317);
+}
+
+/*Search bar*/
+.searchbar{
+    display: flex;
+    justify-content: center;
+}
+
+.searchbar input{
+    padding: 10px;
+    width: 330px;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.317);
+    outline: none;
+}
+
+.searchbar button{
+    margin-left: 5px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    background:white;
+    cursor:pointer;
+}
+
+.searchbar button:hover{
+    background: #93bbf4;
+}
+
+/*information cards*/
+.information{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+}
+
+.info-card{
+    background: white;
+    padding: 25px;
+    width: 240px;
+    border-radius: 16px;
+    text-align: center;
+    border: rgba(0, 0, 0, 0.317);
+    border-style: ridge;
+}
+
+.info-card img{
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+/*featured trainers*/
+.featuredTrainers{
+    text-align: center;
+    padding: 40px 20px 70px;
+}
+
+.trainer-containers{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.trainer-card{
+    background: white;
+    width: 210px;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px;
+    transition: 2s;
+    text-decoration: none;
+    color:black;
+}
+
+.trainer-card:hover{
+    transform: translate(-6px);
+}
+
+.trainer-card img{
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.trainer-card h3{
+    margin-top: 30px;
+}
+
+
+/*footer*/
+footer{
+    background: #040405;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
