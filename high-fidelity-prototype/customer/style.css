@@ -1,48 +1,58 @@
-body{
-  font-family: 'Inter', sans-serif;
-  background: #f6f8fc;
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f6f8fc;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
     margin: 0;
     text-align: center;
 }
 
-header{
+/*HOME PAGE*/
+/*Header*/
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px, 40px;
     background: #f9f9fb;
     color: rgb(7, 6, 6);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin:20px;
 }
 
+header a{
+    text-decoration: none;
+    color:black;
+}
 
-
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
-     font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-.logo img{
+.logo img {
     height: 45px;
 }
 
-.navigation{
+.navigation {
     display: flex;
     align-items: center;
     gap: 18px;
 }
 
-.browse-link{
+.browse-link {
     color: #111;
-    font-weight: 600;;
+    font-weight: 600;
+    ;
 }
 
-.signup-btn{
-    background:#c2d8f7;
+.signup-btn {
+    background: #c2d8f7;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -50,11 +60,7 @@ header{
     transition: 2s;
 }
 
-.signup-btn:hover{
-    background: #1e3a8a;
-}
-
-.profile-icon img{
+.profile-icon img {
     height: 38px;
     width: 38px;
     border-radius: 50%;
@@ -64,31 +70,28 @@ header{
     transition: 2s;
 }
 
-.profile-icon img:hover{
-    border-color: #c2d8f7;
-}
-
 /*Hero area*/
-.hero{
+.hero {
     text-align: center;
     padding: 70px 20px 40px;
     background-color: #c2d8f7;
 }
-.hero h1{
+
+.hero h1 {
     font-size: 35px;
 }
 
-.hero p{
+.hero p {
     color: rgba(0, 0, 0, 0.317);
 }
 
 /*Search bar*/
-.searchbar{
+.searchbar {
     display: flex;
     justify-content: center;
 }
 
-.searchbar input{
+.searchbar input {
     padding: 10px;
     width: 330px;
     border-radius: 20px;
@@ -96,28 +99,24 @@ header{
     outline: none;
 }
 
-.searchbar button{
+.searchbar button {
     margin-left: 5px;
     border: none;
     border-radius: 20px;
     font-weight: bold;
-    background:white;
-    cursor:pointer;
-}
-
-.searchbar button:hover{
-    background: #93bbf4;
+    background: white;
+    cursor: pointer;
 }
 
 /*information cards*/
-.information{
+.information {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 50px 20px;
 }
 
-.info-card{
+.info-card {
     background: white;
     padding: 25px;
     width: 240px;
@@ -127,18 +126,50 @@ header{
     border-style: ridge;
 }
 
-.info-card img{
+.info-card img {
     width: 60px;
     margin-bottom: 10px;
 }
 
+.bottom-banner{
+    width:100%;
+    background-color: #c2d8f7;
+    padding:50px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 0;
+}
+
+.bottom-banner h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color:black
+}
+
+.bottom-banner p{
+    font-size:18px;
+    color:#333;
+    margin-bottom: 20px;
+}
+
+.banner-btn{
+    display: inline-block;
+    padding:12px 25px;
+    border-radius: 8px;
+    background: #1e3a8a;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /*featured trainers*/
-.featuredTrainers{
+.featuredTrainers {
     text-align: center;
     padding: 40px 20px 70px;
 }
 
-.trainer-container{
+.trainer-container {
     margin-top: 25px;
     display: flex;
     justify-content: center;
@@ -146,7 +177,7 @@ header{
     flex-wrap: wrap;
 }
 
-.trainer-card{
+.trainer-card {
     background: white;
     width: 210px;
     padding: 15px;
@@ -154,39 +185,435 @@ header{
     box-shadow: 0 4px 12px;
     transition: 2s ease;
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
-.trainer-card:hover{
-    transform: translate(-6px);
-}
 
-.trainer-card img{
+
+.trainer-card img {
     width: 100%;
     height: 230px;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.trainer-card h3{
+.trainer-card h3 {
     margin-top: 30px;
 }
 
 
-.rating{
+.rating {
     margin-top: 6px;
     color: gold;
     font-weight: bold;
 }
 
-.rating span{
+.rating span {
     color: #555
 }
 
 /*footer*/
-footer{
-    background: #040405;
-    color: white;
+footer {
+    background: white;
+    color: black;
     text-align: center;
     padding: 20px;
 }
+
+/*SIGN UP PAGE*/
+.signup-btn {
+    background: #4caf50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.signup-container {
+    width: 330px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px;
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: block;
+    margin-top: 15px;
+    padding: 12px;
+    background: #c2d8f7;
+    color: black;
+    border-radius: 10px;
+}
+
+
+/*BROWSE TRAINERS PAGE*/
+.browse {
+    text-align: center;
+    padding: 40px;
+}
+
+.browse-grid {
+    padding-top: 40px;
+    display: grid;
+    gap: 25px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.browse-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid whitesmoke;
+    border-radius: 12px;
+    padding: 15px;
+    background: white;
+    max-width: 500px;
+}
+
+.browse-grid img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.trainer-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    word-wrap: break-word;
+}
+
+.trainer-info p {
+    margin: 4px 0;
+}
+
+.cert {
+    font-size: 14px;
+    color: #444
+}
+
+.since {
+    font-size: 13px;
+    color: #777;
+}
+
+.book-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: #c2d8f7;
+    color: black;
+}
+
+/*TRAINER1 PAGE*/
+.trainer1-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 20px;
+}
+
+.trainer1-hero {
+    width:100%;
+    background-color: #c2d8f7;
+    padding:25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trainer1-hero h2{
+    color:black;
+    font-size: 32px;
+    font-weight: bold;
+
+}
+
+.tprofile-image-container{
+width:100%;
+max-width: 700px;
+}
+
+.tprofile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.tprofile-info {
+    width:100%;
+    max-width: 700px;
+    background: white;
+    border-radius: 12px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:10px;
+}
+
+.tprofile-info h2 {
+    margin-top: 20px;
+}
+
+.pinsym {
+    color: red;
+}
+
+.clocksym {
+    color: #4caf50;
+}
+.specialties{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin:10px;
+}
+
+.specialty-box{
+    background: #c2d8f7;
+    color:black;
+    padding:6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.reviews-section{
+    width:100%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.reviews-section h3{
+    font-size: 22px;
+    color:black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.review-row{
+    display: flex;
+    gap:15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-card{
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding:15px;
+    width:220px;
+    text-align:left;
+}
+
+.review span{
+    color:black;
+}
+
+.review-text{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.reviewer{
+    font-size: 14px;
+    color:#555;
+}
+
+.bookt-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #c2d8f7;
+    color: #040405;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*BOOKING PAGE*/
+.booking-page{
+    text-align: center;
+    padding:50px 20px;
+}
+
+.booking-section h2{
+    padding:40px;
+    background-color: #c2d8f7;
+}
+
+.booking-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding-top: 30px;
+    padding:25px;
+    border-radius:12px;
+}
+
+.booking-container select{
+    padding:10px;
+    width:80%;
+    border-radius: 8px;
+    background:#3c3e413a;
+    color:black;
+    font-weight: bold;
+}
+
+.final-book-btn{
+    display:inline-block;
+    margin-top: 15px;
+    padding:10px 20px;
+    border-radius: 8px;
+    background: #4caf50;
+    color:white;
+    font-weight: bold;
+}
+
+
+/*BOOKING CONFIRM PAGE*/
+.booking-confirm{
+    text-align: center;
+    padding:40px 30px;
+    background: white;
+    border-radius: 18px;
+    border:1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    width:90%;
+}
+
+.confirm-wrap{
+    padding:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-confirm h2{
+    font-size: 32px;
+    font-weight: bold;
+    color:#1e3a8a;
+    margin-bottom: 10px;
+}
+
+.booking-confirm p{
+    font-size: 18px;
+    color:#333;
+    margin:4px;
+}
+
+.booking-confirm .book-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding:8px 16px;
+    border-radius: 8px;
+    background: #c2d8f7;
+    color:black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+
+/*USER PROFILE*/
+.user-profile-page{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 25px;
+padding:40px 20px;
+}
+
+.profile-card{
+    background:white;
+    padding: 30px;
+    border-radius:20px;
+    width:300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.user-pic{
+    padding-top: 30px;
+    width:90px;
+    border-radius: 100%;
+    margin-bottom: 15px;
+}
+
+.edit-info-card{
+    background: white;
+    padding:30px;
+    border-radius:20px;
+    width:300px;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.edit-info-card input{
+    padding:10px;
+    border-radius: 8px;
+    border:1px solid black;
+}
+
+.save-new-info-btn{
+margin-top: 10px;
+padding: 10px;
+border-radius: 10px;
+background: #c2d8f7;
+font-weight: bold;
+}
+
+.user-history{
+    background: white;
+    padding:30px;
+    border-radius: 20px;
+    width:300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.history-card{
+    margin-top:15px;
+    padding:15px;
+    border-radius:12px;
+    background:white;
+    border:1px solid black;
+}
+
+.history-card p{
+    margin:5px 0;
+}
+
+
