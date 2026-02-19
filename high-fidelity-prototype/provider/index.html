@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Dashboard - FitMatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="FitMatch Logo">
+            <a href="home.html"><h3>FitMatch</h3></a>
+        </div>
+        
+        <nav class="navigation">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="bookings.html">Bookings</a>
+            <a href="services.html">Services</a>
+            <a href="profile.html" class="profile-icon">
+                <img src="images/profileicon.png" alt="Profile">
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="welcome-section">
+            <h1>Provider Dashboard</h1>
+            <p>Welcome back, David!</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Today's Sessions</h3>
+                <p class="stat-number">3</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Requests</h3>
+                <p class="stat-number">5</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Clients</h3>
+                <p class="stat-number">24</p>
+            </div>
+            <div class="stat-card">
+                <h3>Average Rating</h3>
+                <p class="stat-number">4.8 ⭐</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Sessions -->
+        <section class="sessions-section">
+            <h2>Upcoming Sessions Today</h2>
+            <div class="sessions-list">
+                <div class="session-item">
+                    <div class="session-time">2:00 PM</div>
+                    <div class="session-info">
+                        <strong>Sarah Johnson</strong>
+                        <p>Strength Training Session</p>
+                    </div>
+                    <span class="badge confirmed">Confirmed</span>
+                </div>
+                <div class="session-item">
+                    <div class="session-time">4:00 PM</div>
+                    <div class="session-info">
+                        <strong>Michael Chen</strong>
+                        <p>HIIT Training</p>
+                    </div>
+                    <span class="badge confirmed">Confirmed</span>
+                </div>
+                <div class="session-item">
+                    <div class="session-time">6:00 PM</div>
+                    <div class="session-info">
+                        <strong>Emma Davis</strong>
+                        <p>Weight Loss Program</p>
+                    </div>
+                    <span class="badge confirmed">Confirmed</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FitMatch. All rights reserved.</p>
+    </footer>
+</body>
+</html>
