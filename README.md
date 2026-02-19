@@ -10,10 +10,10 @@ FitMatch is a web-based platform designed to help beginners or fitness enthusias
 
 ## App Functions
 1. Customer:
-    1. Create/modify customer profile - 
-    2. View available services - 
-    3. Subscribe to available services - 
-    4. Write reviews for subscribed services - 
+    1. Create/modify customer profile - Create and update profile to show prefrences, profile picture, and name. 
+    2. View available services - View trainers and their specialties.
+    3. Subscribe to available services - Book training sessions.
+    4. Write reviews for subscribed services - Send feedback to trainers to inform both trainer and other clients. 
 
 2. Provider:
    1. Create/modify/remove provider profile - Create, update, or remove trainer profile to show skills, certifications, and/or area of expertise.
