@@ -19,13 +19,13 @@ header {
     padding: 18px, 40px;
     background: #f9f9fb;
     color: rgb(7, 6, 6);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    margin:20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
-header a{
+header a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
 .logo {
@@ -131,31 +131,31 @@ header a{
     margin-bottom: 10px;
 }
 
-.bottom-banner{
-    width:100%;
+.bottom-banner {
+    width: 100%;
     background-color: #c2d8f7;
-    padding:50px 20px;
+    padding: 50px 20px;
     text-align: center;
     margin-top: 50px;
     border-radius: 0;
 }
 
-.bottom-banner h2{
+.bottom-banner h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 15px;
-    color:black
+    color: black
 }
 
-.bottom-banner p{
-    font-size:18px;
-    color:#333;
+.bottom-banner p {
+    font-size: 18px;
+    color: #333;
     margin-bottom: 20px;
 }
 
-.banner-btn{
+.banner-btn {
     display: inline-block;
-    padding:12px 25px;
+    padding: 12px 25px;
     border-radius: 8px;
     background: #1e3a8a;
     color: white;
@@ -328,23 +328,23 @@ footer {
 }
 
 .trainer1-hero {
-    width:100%;
+    width: 100%;
     background-color: #c2d8f7;
-    padding:25px;
+    padding: 25px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.trainer1-hero h2{
-    color:black;
+.trainer1-hero h2 {
+    color: black;
     font-size: 32px;
     font-weight: bold;
 
 }
 
-.tprofile-image-container{
-width:100%;
-max-width: 700px;
+.tprofile-image-container {
+    width: 100%;
+    max-width: 700px;
 }
 
 .tprofile-img {
@@ -355,16 +355,16 @@ max-width: 700px;
 }
 
 .tprofile-info {
-    width:100%;
+    width: 100%;
     max-width: 700px;
     background: white;
     border-radius: 12px;
-    padding:20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap:10px;
+    gap: 10px;
 }
 
 .tprofile-info h2 {
@@ -378,64 +378,66 @@ max-width: 700px;
 .clocksym {
     color: #4caf50;
 }
-.specialties{
+
+.specialties {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    margin:10px;
+    margin: 10px;
 }
 
-.specialty-box{
+.specialty-box {
     background: #c2d8f7;
-    color:black;
-    padding:6px 12px;
+    color: black;
+    padding: 6px 12px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: bold;
 }
-.reviews-section{
-    width:100%;
+
+.reviews-section {
+    width: 100%;
     max-width: 800px;
     margin-top: 20px;
     text-align: center;
 }
 
-.reviews-section h3{
+.reviews-section h3 {
     font-size: 22px;
-    color:black;
+    color: black;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.review-row{
+.review-row {
     display: flex;
-    gap:15px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.review-card{
+.review-card {
     background: white;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    padding:15px;
-    width:220px;
-    text-align:left;
+    padding: 15px;
+    width: 220px;
+    text-align: left;
 }
 
-.review span{
-    color:black;
+.review span {
+    color: black;
 }
 
-.review-text{
+.review-text {
     font-size: 15px;
     margin-bottom: 5px;
 }
 
-.reviewer{
+.reviewer {
     font-size: 14px;
-    color:#555;
+    color: #555;
 }
 
 .bookt-btn {
@@ -451,93 +453,93 @@ max-width: 700px;
 
 
 /*BOOKING PAGE*/
-.booking-page{
+.booking-page {
     text-align: center;
-    padding:50px 20px;
+    padding: 50px 20px;
 }
 
-.booking-section h2{
-    padding:40px;
+.booking-section h2 {
+    padding: 40px;
     background-color: #c2d8f7;
 }
 
-.booking-container{
-    display:flex;
+.booking-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap:15px;
+    gap: 15px;
     max-width: 400px;
     margin: auto;
     background: white;
     padding-top: 30px;
-    padding:25px;
-    border-radius:12px;
+    padding: 25px;
+    border-radius: 12px;
 }
 
-.booking-container select{
-    padding:10px;
-    width:80%;
+.booking-container select {
+    padding: 10px;
+    width: 80%;
     border-radius: 8px;
-    background:#3c3e413a;
-    color:black;
+    background: #3c3e413a;
+    color: black;
     font-weight: bold;
 }
 
-.final-book-btn{
-    display:inline-block;
+.final-book-btn {
+    display: inline-block;
     margin-top: 15px;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 8px;
     background: #4caf50;
-    color:white;
+    color: white;
     font-weight: bold;
 }
 
 
 /*BOOKING CONFIRM PAGE*/
-.booking-confirm{
+.booking-confirm {
     text-align: center;
-    padding:40px 30px;
+    padding: 40px 30px;
     background: white;
     border-radius: 18px;
-    border:1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     max-width: 400px;
-    width:90%;
+    width: 90%;
 }
 
-.confirm-wrap{
-    padding:100px;
+.confirm-wrap {
+    padding: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.booking-confirm h2{
+.booking-confirm h2 {
     font-size: 32px;
     font-weight: bold;
-    color:#1e3a8a;
+    color: #1e3a8a;
     margin-bottom: 10px;
 }
 
-.booking-confirm p{
+.booking-confirm p {
     font-size: 18px;
-    color:#333;
-    margin:4px;
+    color: #333;
+    margin: 4px;
 }
 
-.booking-confirm .book-btn{
+.booking-confirm .book-btn {
     display: inline-block;
     margin-top: 20px;
-    padding:8px 16px;
+    padding: 8px 16px;
     border-radius: 8px;
     background: #c2d8f7;
-    color:black;
+    color: black;
     font-weight: bold;
     font-size: 14px;
 }
@@ -545,75 +547,137 @@ max-width: 700px;
 
 
 /*USER PROFILE*/
-.user-profile-page{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 25px;
-padding:40px 20px;
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    padding: 40px;
 }
 
-.profile-card{
-    background:white;
+.sidebar {
+    background: white;
+    border-radius: 20px;
     padding: 30px;
-    border-radius:20px;
-    width:300px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.user-pic{
-    padding-top: 30px;
-    width:90px;
-    border-radius: 100%;
+.user-pic {
+    width: 110px;
+    border-radius: 50%;
     margin-bottom: 15px;
 }
 
-.edit-info-card{
-    background: white;
-    padding:30px;
-    border-radius:20px;
-    width:300px;
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+.email {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
-.edit-info-card input{
-    padding:10px;
-    border-radius: 8px;
-    border:1px solid black;
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
 }
 
-.save-new-info-btn{
-margin-top: 10px;
-padding: 10px;
-border-radius: 10px;
-background: #c2d8f7;
-font-weight: bold;
+.stats h3 {
+    margin: 0;
 }
 
-.user-history{
-    background: white;
-    padding:30px;
+.stats p {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+}
+
+.fitness-goals h3 {
+    margin-bottom: 10px;
+}
+
+.fitness-goals span {
+    display: inline-block;
+    background: #c2d8f7;
+    padding: 6px 12px;
+    margin: 5px;
     border-radius: 20px;
-    width:300px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    font-size: 13px;
 }
 
-.history-card{
-    margin-top:15px;
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.history-session {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+}
+
+.leave-review-btn {
+    display:inline-block;
+    margin-top: 10px;
+    padding:6px 12px;
+    background: #c2d8f7;
+    border-radius: 8px;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+.review-form{
+    display:none;
+    margin-top:10px;
+    background: white;
     padding:15px;
     border-radius:12px;
-    background:white;
-    border:1px solid black;
+    border:1px solid #ddd;
 }
 
-.history-card p{
-    margin:5px 0;
+.history-session:target .review-form{
+    display:block;
 }
 
+
+.stars {
+    font-size: 22px;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.review-form textarea {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    resize: none;
+}
+
+.review-form button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #c2d8f7;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border:1px solid #ddd;
+}
 

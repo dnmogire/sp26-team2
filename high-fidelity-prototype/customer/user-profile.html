@@ -28,45 +28,76 @@
 
 
 
-    <div class="user-profile-page">
+    <div class="profile-container">
 
-        <section class="profile-card">
-            <h2>Cathy Turner</h2>
+        <aside class="sidebar">
             <img src="images/user-pic.jpeg" class="user-pic">
 
-            <p>Sessions completed💪: 1</p>
-            <p>Reviews Left: 1</p>
-        </section>
+            <h2>Cathy Turner</h2>
+            <p class="email">cathyt@gmail.com</p>
 
-        <section class="user-history">
-            <h3>History</h3>
-            <div class="history-card">
-                <p><strong>Trainer: </strong> Jane Johnson</p>
-                <p><strong>Date: </strong>Feb 20, 2026</p>
-                <p><strong>Duration: </strong>1 hour</p>
+            <div class="stats">
+                <div>
+                    <h3>1 </h3>
+                    <p>Session</p>
+                </div>
+
+                <div>
+                    <h3>0</h3>
+                    <p>Reviews</p>
+                </div>
             </div>
 
-        </section>
-
-        <section class="edit-info-card">
-            <h3>Edit Profile</h3>
-            <label>Name: </label>
-            <input type="text" placeholder="Enter New Name">
-
-            <label>Email</label>
-            <input type="email" placeholder="Enter New Email">
-
-            <label>Password</label>
-            <input type="password" placeholder="Enter New Password">
-
-            <button class="save-new-info-btn">Save Changes</button>
-        </section>
+            <div class="fitness-goals">
+                <h3>Fitness Interests</h3>
+                <span>HITT</span>
+                <span>Yoga</span>
+            </div>
+        </aside>
 
 
-        <div class="stats">
+        <section class="profile-main">
 
-        </div>
+            <section class="user-card">
+                <h3>History</h3>
+                <div class="history-session" id="session1">
+                    <p><strong>Trainer: </strong> Jane Johnson</p>
+                    <p><strong>Date: </strong>Feb 20, 2026</p>
+                    <p><strong>Duration: </strong>1 hour</p>
+
+                    <a href="#session1" class="leave-review-btn">Leave a Review</a>
+
+                    <div class="review-form">
+                        <h4>Leave a Review</h4>
+                        <div class="stars">
+                        <p>★ ★ ★ ★ ★</p>
+
+                        <textarea placeholder="Write a review..."></textarea>
+
+                        <button>Submit</button>
+                    </div>
+                </div>
+                </div>
+
+
+            </section>
+
+
+            <section class="user-card">
+                <h3>Edit Profile</h3>
+                <label>Name: </label>
+                <input type="text" placeholder="Enter New Name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter New Email">
+
+                <label>Password</label>
+                <input type="password" placeholder="Enter New Password">
+
+                <button class="save-new-info-btn">Save Changes</button>
+            </section>
     </div>
+
 </body>
 
 </html>
