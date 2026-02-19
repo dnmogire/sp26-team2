@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings - FitMatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="FitMatch Logo">
+            <a href="home.html"><h3>FitMatch</h3></a>
+        </div>
+        
+        <nav class="navigation">
+            <a href="index.html">Dashboard</a>
+            <a href="bookings.html" class="active">Bookings</a>
+            <a href="services.html">Services</a>
+            <a href="profile.html" class="profile-icon">
+                <img src="images/profileicon.png" alt="Profile">
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="welcome-section">
+            <h1>Manage Bookings</h1>
+            <p>Review and manage your client session requests</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('pending')">Pending (5)</button>
+            <button class="tab-btn" onclick="showTab('confirmed')">Confirmed (8)</button>
+            <button class="tab-btn" onclick="showTab('completed')">Completed (24)</button>
+        </div>
+
+        <!-- Pending Tab -->
+        <div id="pending" class="tab-content active">
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>John Smith</h3>
+                    <span class="badge pending">Pending</span>
+                </div>
+                <p><strong>Date:</strong> Feb 18, 2026 at 3:00 PM</p>
+                <p><strong>Service:</strong> Yoga Session</p>
+                <p><strong>Price:</strong> $60</p>
+                <div class="btn-group">
+                    <button class="btn btn-success">Confirm</button>
+                    <button class="btn btn-danger">Decline</button>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>Emily Chen</h3>
+                    <span class="badge pending">Pending</span>
+                </div>
+                <p><strong>Date:</strong> Feb 19, 2026 at 5:00 PM</p>
+                <p><strong>Service:</strong> HIIT Training</p>
+                <p><strong>Price:</strong> $75</p>
+                <div class="btn-group">
+                    <button class="btn btn-success">Confirm</button>
+                    <button class="btn btn-danger">Decline</button>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>Rachel Williams</h3>
+                    <span class="badge pending">Pending</span>
+                </div>
+                <p><strong>Date:</strong> Feb 20, 2026 at 10:00 AM</p>
+                <p><strong>Service:</strong> Strength Training</p>
+                <p><strong>Price:</strong> $75</p>
+                <div class="btn-group">
+                    <button class="btn btn-success">Confirm</button>
+                    <button class="btn btn-danger">Decline</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmed Tab -->
+        <div id="confirmed" class="tab-content">
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>Sarah Johnson</h3>
+                    <span class="badge confirmed">Confirmed</span>
+                </div>
+                <p><strong>Date:</strong> Today at 2:00 PM</p>
+                <p><strong>Service:</strong> Strength Training</p>
+                <p><strong>Price:</strong> $75</p>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">Reschedule</button>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>Michael Chen</h3>
+                    <span class="badge confirmed">Confirmed</span>
+                </div>
+                <p><strong>Date:</strong> Today at 4:00 PM</p>
+                <p><strong>Service:</strong> HIIT Training</p>
+                <p><strong>Price:</strong> $75</p>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">Reschedule</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Tab -->
+        <div id="completed" class="tab-content">
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>Emma Davis</h3>
+                    <span class="badge completed">Completed</span>
+                </div>
+                <p><strong>Date:</strong> Feb 14, 2026 at 6:00 PM</p>
+                <p><strong>Service:</strong> Weight Loss Program</p>
+                <p><strong>Price:</strong> $75</p>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-header">
+                    <h3>Lisa Martinez</h3>
+                    <span class="badge completed">Completed</span>
+                </div>
+                <p><strong>Date:</strong> Feb 12, 2026 at 3:00 PM</p>
+                <p><strong>Service:</strong> Yoga Session</p>
+                <p><strong>Price:</strong> $60</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FitMatch. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

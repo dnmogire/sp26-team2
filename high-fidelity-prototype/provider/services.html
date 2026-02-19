@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - FitMatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="FitMatch Logo">
+            <a href="home.html"><h3>FitMatch</h3></a>
+        </div>
+        
+        <nav class="navigation">
+            <a href="index.html">Dashboard</a>
+            <a href="bookings.html">Bookings</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="profile.html" class="profile-icon">
+                <img src="images/profileicon.png" alt="Profile">
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="welcome-section">
+            <h1>My Services</h1>
+            <p>Manage your training programs and sessions</p>
+        </div>
+
+        <button class="btn btn-primary" onclick="toggleForm()">+ Create New Service</button>
+
+        <!-- Create Service Form (Hidden by default) -->
+        <div id="serviceForm" class="form-section" style="display: none;">
+            <h2>Create New Service</h2>
+            <form>
+                <div class="form-group">
+                    <label>Service Name</label>
+                    <input type="text" placeholder="e.g., Personal Training Session" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea rows="4" placeholder="Describe this service..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <select required>
+                            <option value="">Select duration</option>
+                            <option value="30">30 minutes</option>
+                            <option value="45">45 minutes</option>
+                            <option value="60">60 minutes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" placeholder="75" required>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="toggleForm()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Service</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Services List -->
+        <section class="section">
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Strength Training Session</h3>
+                    <span class="badge active">Active</span>
+                </div>
+                <p>Personalized strength training focusing on building muscle and improving fitness.</p>
+                <div class="service-meta">
+                    <span>60 minutes • $75</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>HIIT Training</h3>
+                    <span class="badge active">Active</span>
+                </div>
+                <p>High-intensity interval training for maximum calorie burn.</p>
+                <div class="service-meta">
+                    <span>45 minutes • $75</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Weight Loss Program</h3>
+                    <span class="badge active">Active</span>
+                </div>
+                <p>Comprehensive program combining cardio, strength, and nutrition guidance.</p>
+                <div class="service-meta">
+                    <span>60 minutes • $75</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Yoga & Flexibility</h3>
+                    <span class="badge active">Active</span>
+                </div>
+                <p>Relaxing yoga sessions focused on flexibility, balance, and mindfulness.</p>
+                <div class="service-meta">
+                    <span>60 minutes • $60</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FitMatch. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
