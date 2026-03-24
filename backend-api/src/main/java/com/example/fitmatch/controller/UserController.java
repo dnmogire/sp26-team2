@@ -73,24 +73,28 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    // GET      search trainer by activity
+    // GET /api/users/trainers/search?activity=     search trainer by activity
     @GetMapping("/trainers/search")
     public List <TrainerProfile> searchByActivity(@RequestParam String activity){
         return trainerProfileService.searchBySpecialty(activity);
     }
 
-    //GET      filter by price
+    //GET /api/users/trainers/filter?maxPrice=      filter by price
     @GetMapping("/trainers/filter")
     public List <TrainerProfile> filterByPrice(@RequestParam Double maxPrice){
         return trainerProfileService.searchByMaxRate(maxPrice);
     }
 
 
-    //GET     booking history
+    //GET /api/users/{id}/bookings    booking history
     @GetMapping("/{id}/bookings")
     public List <Booking> getBookingHistory(@PathVariable Long id){
         return bookingService.getByClient(id);
     }
 
-    
+    //GET /api/users/trainers/location?location=
+    @GetMapping("/trainers/location")
+    public List <TrainerProfile> searchByLocation(@RequestParam String location){
+        return trainerProfileService.searchByLocation(location);
+    }
 }
