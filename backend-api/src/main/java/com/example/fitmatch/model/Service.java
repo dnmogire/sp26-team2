@@ -1,42 +1,7 @@
 package com.example.fitmatch.model;
 
-<<<<<<< HEAD
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Service{
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
-
-    private String className;
-    private String classDesc;
-
-    public Long getId(){
-        return id;
-    }
-
-public String getName(String className){
-    return className;
-}
-
-public void setName(String className){
-    this.className = className;
-}
-
-public String getDescription(){
-    return classDesc;
-}
-
-public void setDescription(String classDesc){
-    this.classDesc =  classDesc;
-}
-
-=======
 import jakarta.persistence.*;
+
 
 @Entity
 @Table(name = "services")
@@ -76,5 +41,4 @@ public class Service {
     public void setCategory(String category) { this.category = category; }
     public Boolean getIsActive() { return isActive; }
     public void setIsActive(Boolean isActive) { this.isActive = isActive; }
->>>>>>> c18d6b7f1eb1ec89673dddebc53457c17c6307d9
 }
