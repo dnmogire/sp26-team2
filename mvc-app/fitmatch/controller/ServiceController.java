@@ -1,12 +1,21 @@
 package com.example.fitmatch.controller;
 
-import com.example.fitmatch.model.Service;
-import com.example.fitmatch.service.ServiceService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.fitmatch.model.Service;
+import com.example.fitmatch.service.ServiceService;
+
+@Controller
 @RequestMapping("/api/services")
 public class ServiceController {
 

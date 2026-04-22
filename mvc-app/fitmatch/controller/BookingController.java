@@ -1,15 +1,23 @@
 package com.example.fitmatch.controller;
 
-import com.example.fitmatch.model.Booking;
-import com.example.fitmatch.service.BookingService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
 
-@RestController
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.fitmatch.model.Booking;
+import com.example.fitmatch.service.BookingService;
+
+@Controller
 @RequestMapping("/api/bookings")
 public class BookingController {
 
