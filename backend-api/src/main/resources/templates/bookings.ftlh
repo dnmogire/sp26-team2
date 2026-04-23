@@ -29,19 +29,28 @@
         </nav>
     </header>
 
-<h1>My Bookings</h1>
+<section class="bookings-page">
+<h1 class="page-title">My Bookings</h1>
 
+<div class="bookings-container">
 <#if bookings?has_content>
     <#list bookings as b>
+
         <div class="booking-card">
-            <p>Trainer: ${b.trainer.user.firstName!"Unknown"} ${b.trainer.user.lastName!"Trainer"}</p>
-            <p>Date: ${b.date}</p>
-            <p>Time: ${b.time}</p>
-            <p>Status: ${b.status}</p>
+
+            <div class="booking-header">
+            <h3>${b.trainer.user.firstName!"Unknown"} ${b.trainer.user.lastName!"Trainer"}</h3>
+            <span class="status ${b.status?lower_case}">${b.status}</span>
+            </div>
+            <div class="booking-details">
+            <p><strong>Date:</strong> ${b.date}</p>
+            <p><strong>Time:</strong> ${b.time}</p>
         </div>
+    </div>
+
     </#list>
 <#else>
-    <p>No bookings yet.</p>
+    <p class="no-booking">No bookings yet.</p>
 </#if>
 
 </body>
