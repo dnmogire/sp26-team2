@@ -42,12 +42,10 @@
 
                 <div class="browse-card">
 
-                    <!-- fixed image (NO DB needed) -->
                     <img src="/images/trainer${trainer.id % 3 + 1}.jpg" alt="Trainer Image">
 
                     <div class="trainer-info">
 
-                        <!-- FIX: name comes from User -->
                         <h4>
                             ${trainer.user.firstName!} ${trainer.user.lastName!}
                         </h4>
