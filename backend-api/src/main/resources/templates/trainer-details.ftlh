@@ -67,7 +67,7 @@
                     <label>Service</label>
                     <select name="serviceId">
                         <#list services as s>
-                            <option value="${s.id}">${s.name} - {s.price}</option>
+                            <option value="${s.id}">${s.name} - $${s.price}</option>
                         </#list>
                     </select>
 
