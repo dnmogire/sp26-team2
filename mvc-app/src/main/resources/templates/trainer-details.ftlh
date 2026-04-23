@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>${trainer.name}</title>
+    <title>Trainer Details</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -17,7 +17,13 @@
 
     <nav class="navigation">
         <a href="/trainers" class="browse-link">Browse Trainers</a>
-        <a href="/login" class="signup-btn">Log in</a>
+
+        <#if loggedInUser??>
+            <a href="/logout" class="signup-btn">Log out</a>
+        <#else>
+            <a href="/login" class="signup-btn">Log in</a>
+        </#if>
+
         <a href="/profile" class="profile-icon">
             <img src="/images/profileicon.png" alt="Profile">
         </a>
@@ -25,70 +31,74 @@
 </header>
 
 
-<section class="trainer1-profile">
+<section class="trainer-page">
 
-    <!-- HERO -->
-    <div class="trainer1-hero">
-        <h2>${trainer.name}</h2>
-    </div>
+    <#if trainer??>
 
-    <!-- IMAGE -->
-    <div class="tprofile-image-container">
-        <img src="/images/${trainer.image! 'default.jpg'}" class="tprofile-img">
-    </div>
+        <!-- PROFILE CARD -->
+        <div class="trainer-profile-card">
 
-    <!-- INFO -->
-    <div class="tprofile-info">
+            <img class="trainer-img" src="/images/trainer1.jpg" alt="Trainer Image">
 
-        <p class="rating">Rating: ${trainer.rating}</p>
+            <div class="trainer-info">
 
-        <p class="cert">Certifications: ${trainer.certification}</p>
+                <h2>
+                    ${trainer.user.firstName!"Unknown"}
+                    ${trainer.user.lastName!"Trainer"}
+                </h2>
 
-        <div class="specialties">
-            <#list trainer.specialties?split(",") as s>
-                <span class="specialty-box">${s}</span>
-            </#list>
+                <p class="rating">⭐ ${trainer.avgRating!0.0}</p>
+
+                <p><strong>Bio:</strong> ${trainer.bio!"No bio available"}</p>
+                <p><strong>Certifications:</strong> ${trainer.certifications!"None"}</p>
+                <p><strong>Specialties:</strong> ${trainer.specialties!"General Fitness"}</p>
+                <p><strong>Location:</strong> ${trainer.location!"N/A"}</p>
+                <p><strong>Hourly Rate:</strong> $${trainer.hourlyRate!0}</p>
+
+            </div>
         </div>
 
-        <p class="price"><b>Price:</b> $${trainer.price}/session</p>
+        <!-- BOOKING SECTION -->
+        <div class="booking-section">
 
-        <p class="location">📍 ${trainer.location}</p>
+            <h3>Book This Trainer</h3>
 
-        <p class="availability"><b>Availability:</b> ${trainer.availability! "Contact for schedule"}</p>
+            <#if loggedInUser??>
 
-        <p class="member">Member since ${trainer.memberSince}</p>
+                <form action="/book" method="post" class="booking-form">
 
-        <a href="/book/${trainer.id}" class="bookt-btn">Book This Trainer</a>
+                    <label>Service</label>
+                    <select name="serviceId">
+                        <#list services as s>
+                            <option value="${s.id}">
+                                ${s.name} - $${s.price}
+                            </option>
+                        </#list>
+                    </select>
 
-    </div>
+                    <label>Date</label>
+                    <input type="date" name="date" required>
 
-</section>
+                    <label>Time</label>
+                    <input type="time" name="time" required>
 
+                    <button type="submit">Book Session</button>
 
-<!-- REVIEWS -->
-<section class="reviews-section">
+                </form>
 
-    <h3>Reviews</h3>
+            <#else>
+                <p class="login-msg">
+                    Please <a href="/login">log in</a> to book a trainer.
+                </p>
+            </#if>
 
-    <div class="review-row">
+        </div>
 
-        <#if reviews?? && reviews?size gt 0>
+    <#else>
 
-            <#list reviews as review>
-                <div class="review-card">
-                    <p class="rating">${review.rating} ★</p>
-                    <p class="review-text">${review.comment}</p>
-                    <p class="reviewer">- ${review.userName}</p>
-                </div>
-            </#list>
+        <p>Trainer not found.</p>
 
-        <#else>
-
-            <p>No reviews yet.</p>
-
-        </#if>
-
-    </div>
+    </#if>
 
 </section>
 

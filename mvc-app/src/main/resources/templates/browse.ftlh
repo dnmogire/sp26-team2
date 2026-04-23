@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Browse Trainers</title>
+    <title>Trainer Details</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="/images/logo.png" alt="FitMatch Logo">
-        <a href="/home"><h3>FitMatch</h3></a>
-    </div>
+    <header>
+        <div class="logo">
+            <img src="/images/logo.png" alt="FitMatch Logo">
+            <a href="/">
+                <h3>FitMatch</h3>
+            </a>
+        </div>
 
-    <nav class="navigation">
-        <a href="/trainers" class="browse-link">Browse Trainers</a>
-        <a href="/login" class="signup-btn">Log in</a>
-        <a href="/profile" class="profile-icon">
-            <img src="/images/profileicon.png" alt="Profile">
-        </a>
-    </nav>
-</header>
+        <nav class="navigation">
+            <a href="/trainers" class="browse-link">Browse Trainers</a>
 
+            <#if loggedInUser??>
+                <a href="/logout" class="signup-btn">Log out</a>
+                <#else>
+                    <a href="/login" class="signup-btn">Log in</a>
+            </#if>
 
-<section class="browse">
-    <h1>Browse Trainers</h1>
+            <a href="/profile" class="profile-icon">
+                <img src="/images/profileicon.png" alt="Profile">
+            </a>
+        </nav>
+    </header>
 
-    <div class="browse-grid">
+    <section class="trainer-details">
 
-        <#list trainers as trainer>
+        <#if trainer??>
 
-            <div class="browse-card">
+            <div class="trainer-card">
 
-                <a href="/trainer/${trainer.id}">
-                    <img src="/images/trainer1.jpg" alt="Trainer Image">
-                </a>
+                <img src="/images/trainer1.jpg" alt="Trainer Image">
 
-                <div class="trainer-info">
-                    <h4>${trainer.name}</h4>
+                <h2>${trainer.user.firstName!""} ${trainer.user.lastName!""}</h2>
 
-                    <p class="rating">
-                        ${trainer.rating?string("0.0")}
-                    </p>
+                <p>⭐ ${trainer.avgRating!"0.0"} / 5</p>
 
-                    <p class="cert">${trainer.certification}</p>
+                <p><strong>Bio:</strong> ${trainer.bio!"No bio available"}</p>
 
-                    <p class="specialty">${trainer.specialties}</p>
+                <p><strong>Certifications:</strong> ${trainer.certifications!"None"}</p>
 
-                    <p class="member">Member since ${trainer.memberSince}</p>
+                <p><strong>Specialties:</strong> ${trainer.specialties!"General Fitness"}</p>
 
-                    <p class="price">Price: $${trainer.price}/session</p>
+                <p><strong>Location:</strong> ${trainer.location!"N/A"}</p>
 
-                    <p class="location">${trainer.location}</p>
-
-                    <a href="/trainer/${trainer.id}" class="book-btn">BOOK</a>
-                </div>
+                <p><strong>Hourly Rate:</strong> $${trainer.hourlyRate!"0"}</p>
 
             </div>
 
-        </#list>
+            <#else>
+                <p>Trainer not found.</p>
+        </#if>
 
-    </div>
-</section>
+    </section>
 
 </body>
+
 </html>

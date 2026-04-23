@@ -19,7 +19,13 @@
 
         <nav class="navigation">
             <a href="/trainers" class="browse-link">Browse Trainers</a>
-            <a href="/login" class="signup-btn">Sign Up</a>
+
+            <#if loggedInUser??>
+                <a href="/logout" class="signup-btn">Log out</a>
+                <#else>
+                    <a href="/login" class="signup-btn">Log in</a>
+            </#if>
+
             <a href="/profile" class="profile-icon">
                 <img src="/images/profileicon.png" alt="Profile">
             </a>
@@ -44,9 +50,9 @@
             <#list featuredTrainers![] as t>
                 <div class="trainer-card">
                     <img src="/images/trainer1.jpg" alt="Trainer Image">
-                    <h4>${t.name}</h4>
-                    <p>${t.specialty}</p>
-                    <p class="rating">${t.rating} <span>${t.ratingValue}</span></p>
+                    <h4>${t.user.firstName} ${t.user.lastName}</h4>
+                    <p>${t.specialties}</p>
+                    <p class="rating">${t.avgRating!"0.0"}</p>
                 </div>
             </#list>
 

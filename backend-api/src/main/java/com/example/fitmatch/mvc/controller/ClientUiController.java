@@ -38,7 +38,7 @@ public class ClientUiController {
         this.serviceRepo = serviceRepo;
     }
 
-    //CREATE ACCOUNT
+    //Create Account
     @GetMapping("/register")
     public String registerPage(Model model) {
         model.addAttribute("user", new User());
@@ -52,6 +52,7 @@ public class ClientUiController {
         return "redirect:/login";
     }
 
+    //Login 
     @GetMapping("/login")
     public String loginPage() {
         return "login";
@@ -67,7 +68,7 @@ public class ClientUiController {
 
         if (user != null && user.getPasswordHash().equals(password)) {
 
-            // STORE USER IN SESSION
+            // store user in session
             session.setAttribute("loggedInUser", user);
 
             return "redirect:/trainers";
