@@ -38,11 +38,9 @@
 
             <div class="trainer-card">
 
-                <!-- STATIC IMAGE (safe fallback) -->
                 <img src="/images/trainer1.jpg" alt="Trainer Image">
 
-                <!-- FIXED: must go through user -->
-                <h2>${trainer.user.name!"Unknown Trainer"}</h2>
+                <h2>${trainer.user.firstName!"Unknown"} ${trainer.user.lastName!"Trainer"}</h2>
 
                 <p>⭐ ${trainer.avgRating!0.0}</p>
 
