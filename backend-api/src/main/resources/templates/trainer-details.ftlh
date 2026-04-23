@@ -9,65 +9,70 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="/images/logo.png" alt="FitMatch Logo">
-            <a href="/home">
-                <h3>FitMatch</h3>
-            </a>
-        </div>
+<header>
+    <div class="logo">
+        <img src="/images/logo.png" alt="FitMatch Logo">
+        <a href="/home"><h3>FitMatch</h3></a>
+    </div>
 
-        <nav class="navigation">
-            <a href="/trainers" class="browse-link">Browse Trainers</a>
+    <nav class="navigation">
+        <a href="/trainers" class="browse-link">Browse Trainers</a>
 
-            <#if loggedInUser??>
-                <a href="/logout" class="signup-btn">Log out</a>
-                <#else>
-                    <a href="/login" class="signup-btn">Log in</a>
-            </#if>
+        <#if loggedInUser??>
+            <a href="/logout" class="signup-btn">Log out</a>
+        <#else>
+            <a href="/login" class="signup-btn">Log in</a>
+        </#if>
 
-            <a href="/profile" class="profile-icon">
-                <img src="/images/profileicon.png" alt="Profile">
-            </a>
-        </nav>
-    </header>
+        <a href="/profile" class="profile-icon">
+            <img src="/images/profileicon.png" alt="Profile">
+        </a>
+    </nav>
+</header>
 
-    <section class="trainer-details">
 
-        <#if trainer??>
+<section class="trainer-page">
 
-            <div class="trainer-card">
+    <#if trainer??>
 
-                <img src="/images/trainer1.jpg" alt="Trainer Image">
+        <!-- PROFILE CARD -->
+        <div class="trainer-profile-card">
 
-                <h2>${trainer.user.firstName!"Unknown"} ${trainer.user.lastName!"Trainer"}</h2>
+            <img class="trainer-img" src="/images/trainer1.jpg" alt="Trainer Image">
 
-                <p>⭐ ${trainer.avgRating!0.0}</p>
+            <div class="trainer-info">
+
+                <h2>
+                    ${trainer.user.firstName!"Unknown"}
+                    ${trainer.user.lastName!"Trainer"}
+                </h2>
+
+                <p class="rating">⭐ ${trainer.avgRating!0.0}</p>
 
                 <p><strong>Bio:</strong> ${trainer.bio!"No bio available"}</p>
-
                 <p><strong>Certifications:</strong> ${trainer.certifications!"None"}</p>
-
                 <p><strong>Specialties:</strong> ${trainer.specialties!"General Fitness"}</p>
-
                 <p><strong>Location:</strong> ${trainer.location!"N/A"}</p>
-
                 <p><strong>Hourly Rate:</strong> $${trainer.hourlyRate!0}</p>
 
             </div>
+        </div>
 
-            <hr>
+        <!-- BOOKING SECTION -->
+        <div class="booking-section">
 
             <h3>Book This Trainer</h3>
 
             <#if loggedInUser??>
 
-                <form action="/book" method="post">
+                <form action="/book" method="post" class="booking-form">
 
                     <label>Service</label>
                     <select name="serviceId">
                         <#list services as s>
-                            <option value="${s.id}">${s.name} - $${s.price}</option>
+                            <option value="${s.id}">
+                                ${s.name} - $${s.price}
+                            </option>
                         </#list>
                     </select>
 
@@ -77,22 +82,25 @@
                     <label>Time</label>
                     <input type="time" name="time" required>
 
-                    <button type="submit">Book Trainer</button>
+                    <button type="submit">Book Session</button>
 
                 </form>
 
-                <#else>
-                    <p>Please <a href="/login">log in</a> to book a trainer.</p>
+            <#else>
+                <p class="login-msg">
+                    Please <a href="/login">log in</a> to book a trainer.
+                </p>
             </#if>
 
-            <#else>
+        </div>
 
-                <p>Trainer not found.</p>
+    <#else>
 
-        </#if>
+        <p>Trainer not found.</p>
 
-    </section>
+    </#if>
+
+</section>
 
 </body>
-
 </html>
