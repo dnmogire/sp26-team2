@@ -38,7 +38,6 @@
 
             <div class="trainer-card">
 
-                <!-- STATIC IMAGE (safe, no DB dependency) -->
                 <img src="/images/trainer1.jpg" alt="Trainer Image">
 
                 <h2>${trainer.user.firstName!""} ${trainer.user.lastName!""}</h2>
