@@ -1,0 +1,583 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: #111;
+    background-color: #f9f9fb; /* Matching beige background */
+}
+
+/* Header - Matching Giselle's design */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #f9f9fb;
+    color: rgb(7, 6, 6);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.logo h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: #4169E1;
+    font-weight: 600;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+/* Navigation - Matching Giselle's style */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navigation a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 2s;
+}
+
+.navigation a:hover {
+    color: #4169E1;
+}
+
+.navigation a.active {
+    color: #4169E1;
+}
+
+.browse-link {
+    color: #111;
+    font-weight: 600;
+}
+
+/* Sign Up Button - Matching Giselle's style */
+.signup-btn {
+    background: #c2d8f7;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 2s;
+}
+
+.signup-btn:hover {
+    background: #1e3a8a;
+}
+
+/* Profile Icon - Matching Giselle's style */
+.profile-icon img {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 2s;
+}
+
+.profile-icon img:hover {
+    border-color: #c2d8f7;
+}
+
+/* Main Content */
+.dashboard-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #4169E1;
+}
+
+/* Sessions Section */
+.sessions-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.sessions-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+/* Sessions List */
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 4px solid #4169E1;
+}
+
+.session-time {
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 80px;
+    color: #4169E1;
+}
+
+.session-info {
+    flex: 1;
+}
+
+.session-info strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.session-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Badge */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge.confirmed {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.badge.pending {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.badge.completed {
+    background: #E0E7FF;
+    color: #3730A3;
+}
+
+.badge.active {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: none;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: #4169E1;
+}
+
+.tab-btn.active {
+    color: #4169E1;
+    border-bottom-color: #4169E1;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Booking Card */
+.booking-card {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.booking-card h3 {
+    font-size: 18px;
+    color: #1a1a1a;
+}
+
+.booking-card p {
+    margin: 8px 0;
+    color: #666;
+}
+
+/* Service Card */
+.service-card {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    color: #1a1a1a;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.service-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Buttons - Matching Giselle's style */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #c2d8f7;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+}
+
+.btn-success {
+    background: #10B981;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-danger {
+    background: #EF4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #DC2626;
+}
+
+.btn-secondary {
+    background: white;
+    color: #666;
+    border: 1px solid #e5e7eb;
+}
+
+.btn-secondary:hover {
+    background: #f9fafb;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+/* Form */
+.form-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 30px 0;
+    border: 1px solid #e5e7eb;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4169E1;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Profile */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4169E1, #1e3a8a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.profile-header h2 {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.profile-header p {
+    color: #666;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 28px;
+    color: #4169E1;
+    margin-bottom: 4px;
+}
+
+.stat-item span {
+    font-size: 14px;
+    color: #666;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    padding: 8px 16px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+}
+
+.cert-list {
+    list-style: none;
+}
+
+.cert-list li {
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.cert-list strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+}
+
+.cert-list p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Section */
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .session-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-stats {
+        gap: 20px;
+    }
+}
