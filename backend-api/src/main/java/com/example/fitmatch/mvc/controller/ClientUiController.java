@@ -89,6 +89,7 @@ public class ClientUiController {
         return "trainers";
     }
 
+    //Trainer details to book
     @GetMapping("/trainer/{id}")
     public String trainerDetails(@PathVariable Long id, Model model, HttpSession session) {
 
@@ -102,56 +103,60 @@ public class ClientUiController {
         return "trainer-details";
     }
 
+    //Book a service
     @PostMapping("/book")
-public String book(
-        @RequestParam Long serviceId,
-        @RequestParam String date,
-        @RequestParam String time,
-        HttpSession session) {
+    public String book(
+            @RequestParam Long serviceId,
+            @RequestParam String date,
+            @RequestParam String time,
+            HttpSession session) {
 
-    User client = (User) session.getAttribute("loggedInUser");
+        User client = (User) session.getAttribute("loggedInUser");
 
-    if (client == null) {
-        return "redirect:/login";
+        //If user is not logged in, redirect to login page
+        if (client == null) {
+            return "redirect:/login";
+        }
+
+        //Find available services 
+        Service service = serviceRepo.findById(serviceId)
+                .orElseThrow(() -> new RuntimeException("Service not found"));
+
+        TrainerProfile trainer = service.getTrainer();
+
+        Booking booking = new Booking();
+        booking.setClient(client);
+        booking.setService(service);
+        booking.setTrainer(trainer);
+        booking.setDate(LocalDate.parse(date));
+        booking.setTime(LocalTime.parse(time));
+        booking.setStatus(Booking.Status.PENDING);
+
+        bookingRepo.save(booking);
+
+        return "redirect:/bookings";
     }
 
-    Service service = serviceRepo.findById(serviceId)
-            .orElseThrow(() -> new RuntimeException("Service not found"));
+//View Bookings
+    @GetMapping("/bookings")
+    public String bookings(Model model, HttpSession session) {
 
-    TrainerProfile trainer = service.getTrainer(); 
+        User user = (User) session.getAttribute("loggedInUser");
 
-    Booking booking = new Booking();
-    booking.setClient(client);
-    booking.setService(service);
-    booking.setTrainer(trainer);
-    booking.setDate(LocalDate.parse(date));
-    booking.setTime(LocalTime.parse(time));
-    booking.setStatus(Booking.Status.PENDING);
+        if (user == null) {
+            return "redirect:/login";
+        }
 
-    bookingRepo.save(booking);
+        model.addAttribute("bookings",
+                bookingRepo.findByClientId(user.getId())
+        );
 
-    return "redirect:/bookings";
-}
-
-@GetMapping("/bookings")
-public String bookings(Model model, HttpSession session) {
-
-    User user = (User) session.getAttribute("loggedInUser");
-
-    if (user == null) {
-        return "redirect:/login";
+        return "bookings";
     }
 
-    model.addAttribute("bookings",
-        bookingRepo.findByClientId(user.getId())
-    );
-
-    return "bookings";
-}
-
-@GetMapping("/logout")
-public String logout(HttpSession session) {
-    session.invalidate();
-    return "redirect:/login";
-}
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
 }
