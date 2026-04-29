@@ -130,11 +130,11 @@ public String book(
 
     bookingRepo.save(booking);
 
-    return "redirect:/bookings";
+    return "redirect:/userBookings";
 }
 
-@GetMapping("/bookings")
-public String bookings(Model model, HttpSession session) {
+@GetMapping("/userBookings")
+public String userBookings(Model model, HttpSession session) {
 
     User user = (User) session.getAttribute("loggedInUser");
 
@@ -146,7 +146,7 @@ public String bookings(Model model, HttpSession session) {
         bookingRepo.findByClientId(user.getId())
     );
 
-    return "bookings";
+    return "Userbookings";
 }
 
 @GetMapping("/logout")
