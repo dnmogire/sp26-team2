@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register - FitMatch</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
 <body>
@@ -38,8 +38,13 @@
 
         <form action="/register" method="post">
 
-            <label>Name</label>
-            <input type="text" name="name" required>
+            <input type="hidden" name="role" id="role" value="CLIENT">
+
+            <label>First Name</label>
+            <input type="text" name="firstName" required>
+
+            <label>Last Name</label>
+            <input type="text" name="lastName" required>
 
             <label>Email</label>
             <input type="email" name="email" required>
@@ -54,6 +59,9 @@
         <p>Already have an account? <a href="/login">Login</a></p>
 
     </section>
+
+    <script src = "/js/auth.js">   
+    </script>
 
 </body>
 

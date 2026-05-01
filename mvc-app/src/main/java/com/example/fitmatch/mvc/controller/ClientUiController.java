@@ -71,6 +71,11 @@ public class ClientUiController {
             // store user in session
             session.setAttribute("loggedInUser", user);
 
+            TrainerProfile trainerProfile = trainerRepo.findByUserId(user.getId()).orElse(null);
+
+            if (trainerProfile != null) {
+                return "redirect:/provider/dashboard/" + trainerProfile.getId();
+            }
             return "redirect:/trainers";
         }
 
@@ -154,4 +159,72 @@ public String logout(HttpSession session) {
     session.invalidate();
     return "redirect:/login";
 }
+
+@GetMapping("/become-trainer")
+public String becomeTrainerPage(HttpSession session, Model model) {
+
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if (user == null) return "redirect:/login";
+
+    TrainerProfile existing =
+            trainerRepo.findByUserId(user.getId()).orElse(null);
+
+    if (existing != null) {
+        return "redirect:/provider/dashboard/" + existing.getId();
+    }
+
+    model.addAttribute("loggedInUser", user);
+    model.addAttribute("trainerProfile", new TrainerProfile());
+
+    return "become-trainer";
+}
+
+@PostMapping("/become-trainer")
+public String becomeTrainer(@ModelAttribute TrainerProfile profile,
+                            HttpSession session) {
+
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if (user == null) return "redirect:/login";
+
+    // safety check (prevents duplicates)
+    TrainerProfile existing =
+            trainerRepo.findByUserId(user.getId()).orElse(null);
+
+    if (existing != null) {
+        return "redirect:/provider/dashboard/" + existing.getId();
+    }
+
+    user.setRole(User.Role.TRAINER);
+    userRepo.save(user);
+
+    profile.setUser(user);
+    profile.setIsActive(true);
+    profile.setAvgRating(0.0);
+
+    TrainerProfile saved = trainerRepo.save(profile);
+
+    return "redirect:/provider/dashboard/" + saved.getId();
+}
+
+@GetMapping("/profile")
+public String profileRedirect(HttpSession session) {
+
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if (user == null) return "redirect:/login";
+
+    if (user.getRole() == User.Role.TRAINER) {
+        TrainerProfile profile =
+            trainerRepo.findByUserId(user.getId()).orElse(null);
+
+        if (profile != null) {
+            return "redirect:/provider/dashboard/" + profile.getId();
+        }
+    }
+
+    return "userProfile"; 
+}
+
 }

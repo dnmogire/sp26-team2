@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Bookings</title>
+    <title>My Dashboard - FitMatch</title>
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
+
 <body>
 
- <header>
+<header>
         <div class="logo">
             <img src="/images/logo.png" alt="FitMatch Logo">
             <a href="/">
@@ -29,29 +30,31 @@
         </nav>
     </header>
 
-<section class="bookings-page">
-<h1 class="page-title">My Bookings</h1>
+<section class="dashboard">
 
-<div class="bookings-container">
-<#if bookings?has_content>
-    <#list bookings as b>
+    <h1>Welcome, ${loggedInUser.firstName}</h1>
 
-        <div class="booking-card">
+    <#if loggedInUser??>
+    <a href="/become-trainer" class="btn btn-primary">
+        Become a Trainer
+    </a>
+</#if>
 
-            <div class="booking-header">
-            <h3>${b.trainer.user.firstName!"Unknown"} ${b.trainer.user.lastName!"Trainer"}</h3>
-            <span class="status ${b.status?lower_case}">${b.status}</span>
-            </div>
-            <div class="booking-details">
-            <p><strong>Date:</strong> ${b.date}</p>
-            <p><strong>Time:</strong> ${b.time}</p>
+    <div class="dashboard-cards">
+
+        <div class="card">
+            <h3>Browse Trainers</h3>
+            <a href="/trainers">View</a>
         </div>
+
+        <div class="card">
+            <h3>My Bookings</h3>
+            <a href="/userBookings">View</a>
+        </div>
+
     </div>
 
-    </#list>
-<#else>
-    <p class="no-booking">No bookings yet.</p>
-</#if>
+</section>
 
 </body>
 </html>

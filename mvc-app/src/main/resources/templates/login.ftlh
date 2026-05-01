@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login - FitMatch</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
 <body>
@@ -42,11 +42,18 @@
 
         <form action="/login" method="post">
 
-            <label>Email</label>
-            <input type="email" name="email" required>
+            <div id="loginFields">
+                <h3>Welcome Back</h3>
 
-            <label>Password</label>
-            <input type="password" name="password" required>
+                <input type="hidden" name="role" id="role" value="CLIENT">
+                
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>Password</label>
+                <input type="password" name="password" required>
+
+            </div>
 
             <button type="submit">Login</button>
 
@@ -55,6 +62,10 @@
         <p>Don't have an account? <a href="/register">Sign up</a></p>
 
     </section>
+
+    <script src="/js/auth.js">
+        
+    </script>
 
 </body>
 
