@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>FitMatch</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
 <body>
