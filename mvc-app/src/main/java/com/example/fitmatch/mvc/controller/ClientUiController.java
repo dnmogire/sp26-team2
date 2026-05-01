@@ -220,7 +220,7 @@ public String profileRedirect(HttpSession session) {
             trainerRepo.findByUserId(user.getId()).orElse(null);
 
         if (profile != null) {
-            return "redirect:/provider/dashboard/" + profile.getId();
+            return "redirect:/provider/profile/" + profile.getId();
         }
     }
 
