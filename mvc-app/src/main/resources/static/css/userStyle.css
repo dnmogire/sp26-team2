@@ -557,7 +557,7 @@ h1, h2, h3 {
     margin-bottom: 6px;
 }
 
-/* spacing fix */
+
 .user-app .dashboard h2 {
     margin-bottom: 12px;
     text-align: left;
@@ -575,7 +575,7 @@ h1, h2, h3 {
     cursor: pointer;
 }
 
-/* primary button */
+
 .user-app .btn-primary {
     background: #c2d8f7;
     color: black;
@@ -587,7 +587,6 @@ h1, h2, h3 {
     color: white;
 }
 
-/* secondary button */
 .user-app .btn-secondary {
     background: black;
     color: white;
@@ -668,7 +667,7 @@ h1, h2, h3 {
     gap: 20px;
 }
 
-/* SESSION BOX */
+
 .user-app .session-box {
     background: #f9fafb;
     padding: 15px;
@@ -676,7 +675,7 @@ h1, h2, h3 {
     border: 1px solid #eee;
 }
 
-/* FORM STYLING */
+
 .user-app .review-card form {
     display: flex;
     flex-direction: column;
@@ -691,13 +690,12 @@ h1, h2, h3 {
     font-family: inherit;
 }
 
-/* TEXTAREA SIZE */
+
 .user-app .review-card textarea {
     min-height: 120px;
     resize: vertical;
 }
 
-/* BUTTON */
 .user-app .review-card button {
     padding: 12px;
     border-radius: 10px;
@@ -710,4 +708,16 @@ h1, h2, h3 {
 
 .user-app .review-card button:hover {
     background: #333;
+}
+
+.user-app .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.user-app .profile-actions {
+    display: flex;
+    gap: 10px;
 }

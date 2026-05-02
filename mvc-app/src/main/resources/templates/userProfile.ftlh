@@ -43,11 +43,15 @@
         <div class="dashboard-header">
             <h1>Welcome, ${loggedInUser.firstName}</h1>
 
+            <div class="userProfile-actions">
             <#if loggedInUser??>
                 <a href="/become-trainer" class="btn btn-primary">
                     Become a Trainer
                 </a>
+
+                <a href="/profile/edit" class="btn btn-secondary">Edit Profile</a>
             </#if>
+            </div>
         </div>
 
         <!-- BOOKINGS SECTION -->

@@ -287,4 +287,36 @@ public String submitReview(@PathVariable Long bookingId,
 
     return "redirect:/profile";
 }
+
+@GetMapping("/profile/edit")
+public String editProfilePage(HttpSession session, Model model) {
+
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if (user == null) return "redirect:/login";
+
+    model.addAttribute("loggedInUser", user);
+
+    return "edit-userProfile"; 
+}
+
+@PostMapping("/profile/update")
+public String updateProfile(@ModelAttribute User updatedUser, HttpSession session) {
+
+    User currentUser = (User) session.getAttribute("loggedInUser");
+
+    currentUser.setFirstName(updatedUser.getFirstName());
+    currentUser.setLastName(updatedUser.getLastName());
+    currentUser.setEmail(updatedUser.getEmail());
+
+
+    if (updatedUser.getPasswordHash() != null && !updatedUser.getPasswordHash().isEmpty()) {
+        currentUser.setPasswordHash(updatedUser.getPasswordHash());
+    }
+
+    userRepo.save(currentUser);
+
+    return "redirect:/profile";
+}
+
 }
