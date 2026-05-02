@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
-<body>
+<body class="user-app">
 
     <header>
         <div class="logo">
@@ -25,9 +25,17 @@
                 <#else>
                     <a href="/login" class="signup-btn">Log in</a>
             </#if>
-
             <a href="/profile" class="profile-icon">
-                <img src="/images/profileicon.png" alt="Profile">
+
+                <#if loggedInUser??>
+                    <div class="nav-avatar">
+                        ${loggedInUser.firstName?substring(0,1)}
+                        ${loggedInUser.lastName?substring(0,1)}
+                    </div>
+                    <#else>
+                        <img src="/images/profileicon.png" alt="Profile">
+                </#if>
+
             </a>
         </nav>
     </header>
@@ -36,7 +44,7 @@
         <h1>Find Your Perfect Trainer</h1>
         <p>Find certified fitness professionals in your area.</p>
 
-        <div class="searchbar">
+        <div class="search-bar">
             <input type="text" placeholder="Search Trainers">
             <a href="/trainers"><button>Search</button></a>
         </div>
@@ -52,7 +60,7 @@
                     <img src="/images/trainer1.jpg" alt="Trainer Image">
                     <h4>${t.user.firstName} ${t.user.lastName}</h4>
                     <p>${t.specialties}</p>
-                    <p class="rating">${t.avgRating!"0.0"}</p>
+                    <p class="rating"> ☆ ${t.avgRating!"0.0"}</p>
                 </div>
             </#list>
 

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Become a Trainer</title>
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
-<body>
+<body class="user-app">
 
-<header>
+    <header>
         <div class="logo">
             <img src="/images/logo.png" alt="FitMatch Logo">
             <a href="/">
@@ -24,45 +25,60 @@
                 <#else>
                     <a href="/login" class="signup-btn">Log in</a>
             </#if>
-
             <a href="/profile" class="profile-icon">
-                <img src="/images/profileicon.png" alt="Profile">
+
+                <#if loggedInUser??>
+                    <div class="nav-avatar">
+                        ${loggedInUser.firstName?substring(0,1)}
+                        ${loggedInUser.lastName?substring(0,1)}
+                    </div>
+                    <#else>
+                        <img src="/images/profileicon.png" alt="Profile">
+                </#if>
+
             </a>
         </nav>
     </header>
 
-<section class="auth-container">
+    <section class="auth-container">
 
-    <h1>Become a Trainer</h1>
+        <div class="auth-card">
+        <h1>Become a Trainer</h1>
 
-    <p>Hi ${loggedInUser.firstName}, complete your trainer profile</p>
+        <p>Hi ${loggedInUser.firstName}, complete your trainer profile!</p>
 
-    <form action="/become-trainer" method="post">
+        <form action="/become-trainer" method="post">
 
-        <label>Bio</label>
-        <textarea name="bio" required></textarea>
+            <label><strong>Bio</strong></label>
+            <textarea name="bio" required></textarea>
 
-        <label>Specialties</label>
-        <input type="text" name="specialties"
-               placeholder="Strength, HIIT, Yoga">
+            <label><strong>Specialties</strong></label>
+            <input type="text" name="specialties" placeholder="Strength, HIIT, Yoga">
 
-        <label>Certifications</label>
-        <input type="text" name="certifications">
+            <label><strong>Certifications</strong></label>
+            <input type="text" name="certifications">
 
-        <label>Hourly Rate</label>
-        <input type="number" name="hourlyRate" step="0.01">
+            <label><strong>Hourly Rate</strong></label>
+            <input type="number" name="hourlyRate" step="0.01">
 
-        <label>Location</label>
-        <input type="text" name="location">
+            <label><strong>Location</strong></label>
+            <input type="text" name="location">
 
-        <label>Phone</label>
-        <input type="text" name="phone">
+            <label><strong>Phone</strong></label>
+            <input type="text" name="phone">
 
-        <button type="submit">Save & Continue</button>
+            <button type="submit">Save & Continue</button>
 
-    </form>
+        </form>
+        </div>
 
-</section>
+    </section>
+
+     <footer>
+        2026 FitMatch
+    </footer>
+
 
 </body>
+
 </html>

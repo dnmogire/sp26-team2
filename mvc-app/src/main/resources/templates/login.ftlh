@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
-<body>
+<body class="user-app">
 
     <header>
         <div class="logo">
@@ -25,47 +25,60 @@
                 <#else>
                     <a href="/login" class="signup-btn">Log in</a>
             </#if>
-
             <a href="/profile" class="profile-icon">
-                <img src="/images/profileicon.png" alt="Profile">
+
+                <#if loggedInUser??>
+                    <div class="nav-avatar">
+                        ${loggedInUser.firstName?substring(0,1)}
+                        ${loggedInUser.lastName?substring(0,1)}
+                    </div>
+                    <#else>
+                        <img src="/images/profileicon.png" alt="Profile">
+                </#if>
+
             </a>
         </nav>
     </header>
 
     <section class="auth-container">
 
-        <h1>Login</h1>
+        <div class="auth-card">
 
-        <#if error??>
-            <p style="color:red;">${error}</p>
-        </#if>
+            <h1>Login</h1>
 
-        <form action="/login" method="post">
+            <#if error??>
+                <p style="color:red;">${error}</p>
+            </#if>
 
-            <div id="loginFields">
-                <h3>Welcome Back</h3>
+            <form action="/login" method="post">
 
-                <input type="hidden" name="role" id="role" value="CLIENT">
-                
-                <label>Email</label>
-                <input type="email" name="email" required>
+                <div id="loginFields">
+                    <h3>Welcome Back</h3>
 
-                <label>Password</label>
-                <input type="password" name="password" required>
+                    <input type="hidden" name="role" id="role" value="CLIENT">
 
-            </div>
+                    <label>Email</label>
+                    <input type="email" name="email" required>
 
-            <button type="submit">Login</button>
+                    <label>Password</label>
+                    <input type="password" name="password" required>
 
-        </form>
+                </div>
 
-        <p>Don't have an account? <a href="/register">Sign up</a></p>
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p>Don't have an account? <a href="/register">Sign up</a></p>
+
+        </div>
 
     </section>
 
-    <script src="/js/auth.js">
-        
-    </script>
+     <footer>
+        2026 FitMatch
+    </footer>
+
 
 </body>
 

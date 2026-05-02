@@ -1,682 +1,766 @@
+/* =========================
+   BASE
+========================= */
+
 body {
     font-family: 'Inter', sans-serif;
     background: #f6f8fc;
+    margin: 0;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     margin: 0;
     text-align: center;
 }
 
-/*HOME PAGE*/
-/*Header*/
-header {
+/* =========================
+   HEADER / NAV
+========================= */
+
+.user-app header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px, 40px;
+    padding: 18px 40px;
     background: #f9f9fb;
     color: rgb(7, 6, 6);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin: 20px;
 }
 
-header a {
+.user-app header a {
     text-decoration: none;
     color: black;
 }
 
-.logo {
+.user-app .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: 'Inter', sans-serif;
 }
 
-.logo img {
+.user-app .logo img {
     height: 45px;
 }
 
-.navigation {
+.user-app .navigation {
     display: flex;
     align-items: center;
     gap: 18px;
 }
 
-.browse-link {
-    color: #111;
+.user-app .browse-link {
     font-weight: 600;
-    ;
+    color: #111;
 }
 
-.signup-btn {
-    background: #c2d8f7;
+.user-app .signup-btn {
+    background: green;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: bold;
-    transition: 2s;
 }
 
-.profile-icon img {
+.user-app .profile-icon img {
     height: 38px;
     width: 38px;
     border-radius: 50%;
     object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: 2s;
 }
 
-/*Hero area*/
-.hero {
+/* Avatar */
+.user-app .nav-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #c2d8f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.user-app .hero {
     text-align: center;
     padding: 70px 20px 40px;
     background-color: #c2d8f7;
 }
 
-.hero h1 {
+.user-app .hero h1 {
     font-size: 35px;
 }
 
-.hero p {
-    color: rgba(0, 0, 0, 0.317);
+.user-app .hero p {
+    color: rgba(0, 0, 0, 0.4);
 }
 
-/*Search bar*/
-.searchbar {
+/* =========================
+   SEARCH BAR
+========================= */
+
+.user-app .searchbar {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
 }
 
-.searchbar input {
-    padding: 10px;
-    width: 330px;
+.user-app .search-bar input{
+    flex:1;
+    padding:10px;
     border-radius: 20px;
-    border-color: rgba(0, 0, 0, 0.317);
-    outline: none;
+    border: 1px solid #ccc;
 }
 
-.searchbar button {
-    margin-left: 5px;
+.user-app .search-bar input{
+    flex: 0.8;
+    max-width: 260px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+
+.user-app .search-bar button{
+    padding: 10px 16px;
     border: none;
     border-radius: 20px;
-    font-weight: bold;
-    background: white;
-    cursor: pointer;
+    background: black;
+    color:white;
+    cursor:pointer;
 }
 
-/*information cards*/
-.information {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px 20px;
-}
+/* =========================
+   FEATURED TRAINERS
+========================= */
 
-.info-card {
-    background: white;
-    padding: 25px;
-    width: 240px;
-    border-radius: 16px;
-    text-align: center;
-    border: rgba(0, 0, 0, 0.317);
-    border-style: ridge;
-}
-
-.info-card img {
-    width: 60px;
-    margin-bottom: 10px;
-}
-
-.bottom-banner {
-    width: 100%;
-    background-color: #c2d8f7;
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 50px;
-    border-radius: 0;
-}
-
-.bottom-banner h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: black
-}
-
-.bottom-banner p {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.banner-btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 8px;
-    background: #1e3a8a;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/*featured trainers*/
-.featuredTrainers {
+.user-app .featuredTrainers {
     text-align: center;
     padding: 40px 20px 70px;
 }
 
-.trainer-container {
-    margin-top: 25px;
+.user-app .trainer-container {
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
 }
 
-.trainer-card {
+.user-app .trainer-card {
     background: white;
     width: 210px;
     padding: 15px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px;
-    transition: 2s ease;
-    text-decoration: none;
-    color: black;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
-
-.trainer-card img {
+.user-app .trainer-card img {
     width: 100%;
     height: 230px;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.trainer-card h3 {
-    margin-top: 30px;
-}
+/* =========================
+   AUTH (LOGIN / REGISTER)
+========================= */
 
-
-.rating {
-    margin-top: 6px;
-    color: gold;
-    font-weight: bold;
-}
-
-.rating span {
-    color: #555
-}
-
-/*footer*/
-footer {
-    background: white;
-    color: black;
-    text-align: center;
-    padding: 20px;
-}
-
-/*SIGN UP PAGE*/
-.signup-btn {
-    background: #4caf50;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-}
-
-.signup-container {
-    width: 330px;
-    margin: 80px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px;
-}
-
-.signup-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid;
-    box-sizing: border-box;
-}
-
-.btn {
-    display: block;
-    margin-top: 15px;
-    padding: 12px;
-    background: #c2d8f7;
-    color: black;
-    border-radius: 10px;
-}
-
-
-/*BROWSE TRAINERS PAGE*/
-.browse {
-    text-align: center;
+.user-app .auth-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
     padding: 40px;
 }
 
-.browse-grid {
-    padding-top: 40px;
-    display: grid;
-    gap: 25px;
-    max-width: 600px;
-    margin: auto;
-}
-
-.browse-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border: 1px solid whitesmoke;
-    border-radius: 12px;
-    padding: 15px;
+.user-app .auth-card {
+    width: 100%;
+    max-width: 400px;
     background: white;
-    max-width: 500px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap:14px;
 }
 
-.browse-grid img {
-    width: 150px;
-    height: auto;
+.user-app .auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.user-app .auth-card input {
+    padding: 12px;
     border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
-.trainer-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    word-wrap: break-word;
-}
-
-.trainer-info p {
-    margin: 4px 0;
-}
-
-.cert {
-    font-size: 14px;
-    color: #444
-}
-
-.since {
-    font-size: 13px;
-    color: #777;
-}
-
-.book-btn {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 8px 14px;
-    border-radius: 8px;
+.user-app .auth-card button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
     background: #c2d8f7;
-    color: black;
+    font-weight: bold;
 }
 
-/*TRAINER1 PAGE*/
-.trainer1-profile {
+.user-app .auth-card button:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.user-app .dashboard {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.user-app .dashboard-cards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
     gap: 20px;
+    margin: 25px 0;
 }
 
-.trainer1-hero {
-    width: 100%;
-    background-color: #c2d8f7;
+.user-app .card {
+    background: white;
     padding: 25px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.trainer1-hero h2 {
-    color: black;
-    font-size: 32px;
-    font-weight: bold;
-
-}
-
-.tprofile-image-container {
-    width: 100%;
-    max-width: 700px;
-}
-
-.tprofile-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-}
-
-.tprofile-info {
-    width: 100%;
-    max-width: 700px;
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-}
-
-.tprofile-info h2 {
-    margin-top: 20px;
-}
-
-.pinsym {
-    color: red;
-}
-
-.clocksym {
-    color: #4caf50;
-}
-
-.specialties {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin: 10px;
-}
-
-.specialty-box {
-    background: #c2d8f7;
-    color: black;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.reviews-section {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.reviews-section h3 {
-    font-size: 22px;
-    color: black;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.review-row {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.review-card {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 15px;
-    width: 220px;
-    text-align: left;
-}
-
-.review span {
-    color: black;
-}
-
-.review-text {
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.reviewer {
-    font-size: 14px;
-    color: #555;
-}
-
-.bookt-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    border-radius: 8px;
-    background: #c2d8f7;
-    color: #040405;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-/*BOOKING PAGE*/
-.booking-page {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.booking-section h2 {
-    padding: 40px;
-    background-color: #c2d8f7;
-}
-
-.booking-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 400px;
-    margin: auto;
-    background: white;
-    padding-top: 30px;
-    padding: 25px;
-    border-radius: 12px;
-}
-
-.booking-container select {
-    padding: 10px;
-    width: 80%;
-    border-radius: 8px;
-    background: #3c3e413a;
-    color: black;
-    font-weight: bold;
-}
-
-.final-book-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: #4caf50;
-    color: white;
-    font-weight: bold;
-}
-
-
-/*BOOKING CONFIRM PAGE*/
-.booking-confirm {
-    text-align: center;
-    padding: 40px 30px;
-    background: white;
-    border-radius: 18px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 400px;
-    width: 90%;
-}
-
-.confirm-wrap {
-    padding: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.booking-confirm h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #1e3a8a;
-    margin-bottom: 10px;
-}
-
-.booking-confirm p {
-    font-size: 18px;
-    color: #333;
-    margin: 4px;
-}
-
-.booking-confirm .book-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: #c2d8f7;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-
-
-/*USER PROFILE*/
-
-.profile-container {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 30px;
-    padding: 40px;
-}
-
-.sidebar {
-    background: white;
     border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.user-pic {
-    width: 110px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.email {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-around;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     margin-bottom: 25px;
 }
 
-.stats h3 {
-    margin: 0;
+/* =========================
+   BOOKINGS
+========================= */
+
+.user-app .booking-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f9fafb;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-top: 12px;
 }
 
-.stats p {
-    margin: 0;
-    font-size: 13px;
-    color: #777;
-}
-
-.fitness-goals h3 {
-    margin-bottom: 10px;
-}
-
-.fitness-goals span {
-    display: inline-block;
-    background: #c2d8f7;
+.user-app .status {
     padding: 6px 12px;
-    margin: 5px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
-.profile-main {
+.user-app .status.pending { background: #fef3c7; }
+.user-app .status.confirmed { background: #d1fae5; }
+.user-app .status.completed { background: #e0e7ff; }
+
+/* =========================
+   BROWSE TRAINERS (MAIN FIXED SECTION)
+========================= */
+
+.user-app .browse-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    max-width: 800px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.user-app .browse-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    min-height: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.user-app .browse-card img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.user-app .trainer-info {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    flex: 1;
+    gap: 6px;
 }
 
-.card {
+.user-app .trainer-info h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+ /*Bubble tags*/
+
+.user-app .tag-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+.user-app .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #eef4ff;
+    color: #1e3a8a;
+    border: 1px solid #dbe6ff;
+}
+
+.user-app .tag.price {
+    background: #eafff1;
+    color: #065f46;
+    border: 1px solid #bbf7d0;
+}
+
+.user-app .tag.location {
+    background: #fff3e6;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+}
+
+.user-app .tag.cert {
+    background: #f3e8ff;
+    color: #6b21a8;
+    border: 1px solid #e9d5ff;
+}
+
+.user-app .tag.rating {
+    background: #fff7cc;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+/* =========================
+   TRAINER DETAILS PAGE
+========================= */
+
+.user-app .trainer-page {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.user-app .trainer-profile-card {
+    display: flex;
+    gap: 20px;
     background: white;
     padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.history-session {
-    margin-top: 15px;
+.user-app .trainer-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.user-app .booking-section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.user-app .review-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 12px;
+    border: 1px solid #eee;
+}
+
+.user-app .review-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-app .review-card {
+    width: 220px;
+    background: white;
+    border-radius: 12px;
     padding: 15px;
     border: 1px solid #eee;
-    border-radius: 15px;
 }
 
-.leave-review-btn {
-    display:inline-block;
-    margin-top: 10px;
-    padding:6px 12px;
+/* =========================
+   RATINGS 
+========================= */
+
+.user-app .rating {
+    margin-top: 6px;
+    font-weight: bold;
+    color: #f5b301; 
+}
+
+.user-app .rating span {
+    color: #555;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.user-app .book-btn {
+    display: inline-block;
+    padding: 8px 14px;
     background: #c2d8f7;
     border-radius: 8px;
     text-decoration: none;
-    color:black;
+    color: black;
     font-weight: bold;
 }
 
-.review-form{
-    display:none;
-    margin-top:10px;
+.user-app footer {
+    text-align: center;
+    padding: 20px;
     background: white;
-    padding:15px;
-    border-radius:12px;
-    border:1px solid #ddd;
 }
 
-.history-session:target .review-form{
-    display:block;
+/* =========================
+   LOGIN FIX (ISOLATION LAYER)
+========================= */
+
+.user-app .auth-card input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex: unset; /* IMPORTANT overrides search-bar flex rules */
 }
 
+.user-app .auth-card form {
+    align-items: stretch;
+}
 
-.stars {
-    font-size: 22px;
-    color: gold;
+.user-app .auth-card h3 {
     margin-bottom: 10px;
 }
 
-.review-form textarea {
-    width: 100%;
-    height: 80px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    resize: none;
+/* =========================
+   TRAINER DETAILS FIX (NEW LAYOUT)
+========================= */
+
+.user-app .trainer-layout {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* keeps it responsive */
 }
 
-.review-form button {
-    margin-top: 10px;
+/* LEFT SIDE */
+.user-app .trainer-profile-card {
+    flex: 2;
+    min-width: 320px;
+}
+
+/* RIGHT SIDE (BOOKING) */
+.user-app .booking-section {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* spacing inside booking form */
+.user-app .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-app .booking-form input,
+.user-app .booking-form select {
     padding: 10px;
-    border: none;
     border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* BOOK BUTTON inside form */
+.user-app .booking-form button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+   REVIEWS SECTION FIX
+========================= */
+
+.user-app .reviews-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.user-app .review-row {
+    margin-top: 20px;
+}
+
+.user-app .review-card {
+    text-align: left;
+}
+
+/* add spacing inside cards */
+.user-app .review-text {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   PROFILE CLEAN LAYOUT
+========================= */
+
+.user-app .dashboard {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* header row */
+.user-app .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* button */
+.user-app .primary-btn {
     background: #c2d8f7;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
     font-weight: bold;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
+/* panels replace cards */
+.user-app .panel {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+/* BOOKINGS CLEANER */
+.user-app .booking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    margin-top: 12px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+/* REVIEWS CLEANER */
+.user-app .review-item {
+    background: #f9fafb;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.user-app .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+/* spacing fix */
+.user-app .dashboard h2 {
     margin-bottom: 12px;
+    text-align: left;
+}
+
+/* =========================
+   BUTTON SYSTEM (GLOBAL)
+========================= */
+
+.user-app .btn {
+    display: inline-block;
+    padding: 10px 16px;
     border-radius: 10px;
-    border:1px solid #ddd;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* primary button */
+.user-app .btn-primary {
+    background: #c2d8f7;
+    color: black;
+    border: 1px solid #b5cceb;
+}
+
+.user-app .btn-primary:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+/* secondary button */
+.user-app .btn-secondary {
+    background: black;
+    color: white;
+}
+
+.user-app .btn-secondary:hover {
+    background: #333;
+}
+
+/* =========================
+   ACTION BUTTONS (BOOKING / REVIEW)
+========================= */
+
+.user-app .leave-review-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    background: #1e3a8a;
+    color: white;
+    margin-left: 10px;
+    transition: 0.2s ease;
+}
+
+.user-app .leave-review-btn:hover {
+    background: #0f255f;
+}
+
+/* =========================
+   TRAINER FORM FIX
+========================= */
+
+.user-app .trainer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.user-app .trainer-form input,
+.user-app .trainer-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.user-app .trainer-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.user-app .trainer-form button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* =========================
+   REVIEW PAGE LAYOUT
+========================= */
+
+.user-app .review-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 40px;
+}
+
+.user-app .review-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* SESSION BOX */
+.user-app .session-box {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+/* FORM STYLING */
+.user-app .review-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.user-app .review-card select,
+.user-app .review-card textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+/* TEXTAREA SIZE */
+.user-app .review-card textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* BUTTON */
+.user-app .review-card button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-app .review-card button:hover {
+    background: #333;
 }

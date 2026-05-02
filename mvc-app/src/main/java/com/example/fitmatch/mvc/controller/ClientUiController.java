@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.fitmatch.model.Booking;
+import com.example.fitmatch.model.Review;
 import com.example.fitmatch.model.Service;
 import com.example.fitmatch.model.TrainerProfile;
 import com.example.fitmatch.model.User;
 import com.example.fitmatch.repository.BookingRepository;
+import com.example.fitmatch.repository.ReviewRepository;
 import com.example.fitmatch.repository.ServiceRepository;
 import com.example.fitmatch.repository.TrainerProfileRepository;
 import com.example.fitmatch.repository.UserRepository;
@@ -30,12 +32,14 @@ public class ClientUiController {
     private final TrainerProfileRepository trainerRepo;
     private final BookingRepository bookingRepo;
     private final ServiceRepository serviceRepo;
+    private final ReviewRepository reviewRepo;
 
-    public ClientUiController(UserRepository userRepo, TrainerProfileRepository trainerRepo, BookingRepository bookingRepo, ServiceRepository serviceRepo) {
+    public ClientUiController(UserRepository userRepo, TrainerProfileRepository trainerRepo, BookingRepository bookingRepo, ServiceRepository serviceRepo, ReviewRepository reviewRepo) {
         this.userRepo = userRepo;
         this.trainerRepo = trainerRepo;
         this.bookingRepo = bookingRepo;
         this.serviceRepo = serviceRepo;
+        this.reviewRepo = reviewRepo;
     }
 
     //Create Account
@@ -84,15 +88,26 @@ public class ClientUiController {
     }
 
     //Browse Trainers
-    @GetMapping("/trainers")
-    public String trainers(Model model, HttpSession session) {
+   @GetMapping("/trainers")
+public String trainers(
+        @RequestParam(required = false) String location,
+        Model model,
+        HttpSession session) {
 
-        List<TrainerProfile> trainers = trainerRepo.findByIsActiveTrue();
-        model.addAttribute("trainers", trainers);
-        model.addAttribute("loggedInUser", session.getAttribute("loggedInUser"));
+    List<TrainerProfile> trainers = trainerRepo.findByIsActiveTrue();
 
-        return "trainers";
+    if (location != null && !location.isBlank()) {
+        trainers = trainers.stream()
+                .filter(t -> t.getLocation() != null &&
+                        t.getLocation().toLowerCase().contains(location.toLowerCase()))
+                .toList();
     }
+
+    model.addAttribute("trainers", trainers);
+    model.addAttribute("loggedInUser", session.getAttribute("loggedInUser"));
+
+    return "trainers";
+}
 
     @GetMapping("/trainer/{id}")
     public String trainerDetails(@PathVariable Long id, Model model, HttpSession session) {
@@ -101,6 +116,8 @@ public class ClientUiController {
 
         model.addAttribute("trainer", trainer);
         model.addAttribute("services", serviceRepo.findByTrainerId(id));
+
+        model.addAttribute("reviews", reviewRepo.findByTrainerId(id));
 
         model.addAttribute("loggedInUser", session.getAttribute("loggedInUser"));
 
@@ -135,24 +152,9 @@ public String book(
 
     bookingRepo.save(booking);
 
-    return "redirect:/userBookings";
+    return "redirect:/profile";
 }
 
-@GetMapping("/userBookings")
-public String userBookings(Model model, HttpSession session) {
-
-    User user = (User) session.getAttribute("loggedInUser");
-
-    if (user == null) {
-        return "redirect:/login";
-    }
-
-    model.addAttribute("bookings",
-        bookingRepo.findByClientId(user.getId())
-    );
-
-    return "Userbookings";
-}
 
 @GetMapping("/logout")
 public String logout(HttpSession session) {
@@ -209,11 +211,17 @@ public String becomeTrainer(@ModelAttribute TrainerProfile profile,
 }
 
 @GetMapping("/profile")
-public String profileRedirect(HttpSession session) {
+public String profileRedirect(HttpSession session, Model model) {
 
     User user = (User) session.getAttribute("loggedInUser");
 
     if (user == null) return "redirect:/login";
+
+    model.addAttribute("loggedInUser", user);
+
+    model.addAttribute("bookings", bookingRepo.findByClientId(user.getId()));
+
+    model.addAttribute("reviews", reviewRepo.findByClientId(user.getId()));
 
     if (user.getRole() == User.Role.TRAINER) {
         TrainerProfile profile =
@@ -227,4 +235,56 @@ public String profileRedirect(HttpSession session) {
     return "userProfile"; 
 }
 
+@GetMapping("/review/{bookingId}")
+public String reviewForm(@PathVariable Long bookingId,
+                         HttpSession session,
+                         Model model) {
+
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if (user == null) return "redirect:/login";
+
+    Booking booking = bookingRepo.findById(bookingId)
+            .orElseThrow(() -> new RuntimeException("Booking not found"));
+
+ 
+    if (!booking.getClient().getId().equals(user.getId())) {
+        return "redirect:/userBookings";
+    }
+
+ 
+    if (reviewRepo.findByBookingId(bookingId).isPresent()) {
+        return "redirect:/profile";
+    }
+
+    model.addAttribute("booking", booking);
+    model.addAttribute("loggedInUser", user);
+
+    return "review-form";
+}
+
+@PostMapping("/review/{bookingId}")
+public String submitReview(@PathVariable Long bookingId,
+                           @RequestParam int rating,
+                           @RequestParam String text,
+                           HttpSession session) {
+
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if (user == null) return "redirect:/login";
+
+    Booking booking = bookingRepo.findById(bookingId)
+            .orElseThrow(() -> new RuntimeException("Booking not found"));
+
+    Review review = new Review();
+    review.setBooking(booking);
+    review.setClient(user);
+    review.setTrainer(booking.getTrainer());
+    review.setRating(rating);
+    review.setText(text);
+
+    reviewRepo.save(review);
+
+    return "redirect:/profile";
+}
 }

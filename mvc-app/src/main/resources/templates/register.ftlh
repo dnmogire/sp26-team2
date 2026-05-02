@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
-<body>
+<body class="user-app">
 
     <header>
         <div class="logo">
@@ -25,43 +25,57 @@
                 <#else>
                     <a href="/login" class="signup-btn">Log in</a>
             </#if>
-
             <a href="/profile" class="profile-icon">
-                <img src="/images/profileicon.png" alt="Profile">
+
+                <#if loggedInUser??>
+                    <div class="nav-avatar">
+                        ${loggedInUser.firstName?substring(0,1)}
+                        ${loggedInUser.lastName?substring(0,1)}
+                    </div>
+                    <#else>
+                        <img src="/images/profileicon.png" alt="Profile">
+                </#if>
+
             </a>
         </nav>
     </header>
 
     <section class="auth-container">
 
-        <h1>Create Account</h1>
+        <div class="auth-card">
 
-        <form action="/register" method="post">
+            <h1>Create Account</h1>
 
-            <input type="hidden" name="role" id="role" value="CLIENT">
+            <form action="/register" method="post">
 
-            <label>First Name</label>
-            <input type="text" name="firstName" required>
+                <input type="hidden" name="role" id="role" value="CLIENT">
 
-            <label>Last Name</label>
-            <input type="text" name="lastName" required>
+                <label>First Name</label>
+                <input type="text" name="firstName" required>
 
-            <label>Email</label>
-            <input type="email" name="email" required>
+                <label>Last Name</label>
+                <input type="text" name="lastName" required>
 
-            <label>Password</label>
-            <input type="password" name="passwordHash" required>
+                <label>Email</label>
+                <input type="email" name="email" required>
 
-            <button type="submit">Register</button>
+                <label>Password</label>
+                <input type="password" name="passwordHash" required>
 
-        </form>
+                <button type="submit">Register</button>
 
-        <p>Already have an account? <a href="/login">Login</a></p>
+            </form>
+
+            <p>Already have an account? <a href="/login">Login</a></p>
+
+        </div>
 
     </section>
 
-    <script src = "/js/auth.js">   
-    </script>
+     <footer>
+        2026 FitMatch
+    </footer>
+
 
 </body>
 
