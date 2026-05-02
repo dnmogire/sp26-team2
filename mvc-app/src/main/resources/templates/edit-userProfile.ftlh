@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>FitMatch</title>
+    <title>My Dashboard - FitMatch</title>
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
@@ -25,8 +24,8 @@
                 <#else>
                     <a href="/login" class="signup-btn">Log in</a>
             </#if>
-            <a href="/profile" class="profile-icon">
 
+            <a href="/profile" class="profile-icon">
                 <#if loggedInUser??>
                     <div class="nav-avatar">
                         ${loggedInUser.firstName?substring(0,1)}
@@ -35,42 +34,36 @@
                     <#else>
                         <img src="/images/profileicon.png" alt="Profile">
                 </#if>
-
             </a>
         </nav>
     </header>
+<body>
+    <section class="auth-container">
 
-    <section class="hero">
-        <h1>Find Your Perfect Trainer</h1>
-        <p>Find certified fitness professionals in your area.</p>
+    <div class="auth-card">
 
-        <div class="search-bar">
-            <input type="text" placeholder="Search Trainers">
-            <a href="/trainers"><button>Search</button></a>
-        </div>
-    </section>
+        <h1>Edit Profile</h1>
 
-    <section class="featuredTrainers">
-        <h2>Featured Trainers</h2>
+        <form action="/profile/update" method="post">
 
-        <div class="trainer-container">
+            <label>First Name</label>
+            <input type="text" name="firstName" value="${loggedInUser.firstName}" required>
 
-            <#list featuredTrainers![] as t>
-                <div class="trainer-card">
-                    <img src="/images/trainer1.jpg" alt="Trainer Image">
-                    <h4>${t.user.firstName} ${t.user.lastName}</h4>
-                    <p>${t.specialties}</p>
-                    <p class="rating"> ☆ ${t.avgRating!"0.0"}</p>
-                </div>
-            </#list>
+            <label>Last Name</label>
+            <input type="text" name="lastName" value="${loggedInUser.lastName}" required>
 
-        </div>
-    </section>
+            <label>Email</label>
+            <input type="email" name="email" value="${loggedInUser.email}" required>
 
-    <footer>
-        2026 FitMatch
-    </footer>
+            <label>New Password</label>
+            <input type="password" name="password" placeholder="Leave blank to keep same">
 
+            <button type="submit">Save Changes</button>
+
+        </form>
+
+    </div>
+
+</section>
 </body>
-
 </html>

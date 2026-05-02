@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>FitMatch</title>
+    <title>Become a Trainer</title>
     <link rel="stylesheet" href="/css/userStyle.css">
 </head>
 
@@ -40,36 +40,44 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Find Your Perfect Trainer</h1>
-        <p>Find certified fitness professionals in your area.</p>
+    <section class="auth-container">
 
-        <div class="search-bar">
-            <input type="text" placeholder="Search Trainers">
-            <a href="/trainers"><button>Search</button></a>
+        <div class="auth-card">
+        <h1>Become a Trainer</h1>
+
+        <p>Hi ${loggedInUser.firstName}, complete your trainer profile!</p>
+
+        <form action="/become-trainer" method="post">
+
+            <label><strong>Bio</strong></label>
+            <textarea name="bio" required></textarea>
+
+            <label><strong>Specialties</strong></label>
+            <input type="text" name="specialties" placeholder="Strength, HIIT, Yoga">
+
+            <label><strong>Certifications</strong></label>
+            <input type="text" name="certifications">
+
+            <label><strong>Hourly Rate</strong></label>
+            <input type="number" name="hourlyRate" step="0.01">
+
+            <label><strong>Location</strong></label>
+            <input type="text" name="location">
+
+            <label><strong>Phone</strong></label>
+            <input type="text" name="phone">
+
+            <button type="submit">Save & Continue</button>
+
+        </form>
         </div>
+
     </section>
 
-    <section class="featuredTrainers">
-        <h2>Featured Trainers</h2>
-
-        <div class="trainer-container">
-
-            <#list featuredTrainers![] as t>
-                <div class="trainer-card">
-                    <img src="/images/trainer1.jpg" alt="Trainer Image">
-                    <h4>${t.user.firstName} ${t.user.lastName}</h4>
-                    <p>${t.specialties}</p>
-                    <p class="rating"> ☆ ${t.avgRating!"0.0"}</p>
-                </div>
-            </#list>
-
-        </div>
-    </section>
-
-    <footer>
+     <footer>
         2026 FitMatch
     </footer>
+
 
 </body>
 
