@@ -12,7 +12,10 @@
         <nav class="navigation">
             <a href="/provider/dashboard/${trainerId?c}">Dashboard</a>
             <a href="/provider/bookings/${trainerId?c}">Bookings</a>
+            <a href="/provider/services/${trainerId?c}">Services</a>
+            <a href="/provider/reviews/${trainerId?c}">Reviews</a>
             <a href="/provider/profile/${trainerId?c}" class="active">Profile</a>
+            <a href="/logout">Logout</a>
         </nav>
     </header>
 

@@ -4,6 +4,8 @@ com\example\fitmatch\controller\UserController.class
 com\example\fitmatch\service\BookingService.class
 com\example\fitmatch\service\TrainerProfileService.class
 com\example\fitmatch\model\User.class
+com\example\fitmatch\mvc\controller\AppUiController.class
+com\example\fitmatch\mvc\controller\ClientUiController.class
 com\example\fitmatch\controller\BookingController.class
 com\example\fitmatch\model\User$Role.class
 com\example\fitmatch\repository\TrainerProfileRepository.class
