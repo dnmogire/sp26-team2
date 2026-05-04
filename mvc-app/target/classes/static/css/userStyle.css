@@ -1,0 +1,723 @@
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f6f8fc;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    text-align: center;
+}
+
+
+
+.user-app header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #f9f9fb;
+    color: rgb(7, 6, 6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.user-app header a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-app .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-app .logo img {
+    height: 45px;
+}
+
+.user-app .navigation {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.user-app .browse-link {
+    font-weight: 600;
+    color: #111;
+}
+
+.user-app .signup-btn {
+    background: green;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.user-app .profile-icon img {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-app .nav-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #c2d8f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+
+.user-app .hero {
+    text-align: center;
+    padding: 70px 20px 40px;
+    background-color: #c2d8f7;
+}
+
+.user-app .hero h1 {
+    font-size: 35px;
+}
+
+.user-app .hero p {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+.user-app .searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+.user-app .search-bar input{
+    flex:1;
+    padding:10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.user-app .search-bar input{
+    flex: 0.8;
+    max-width: 260px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+
+.user-app .search-bar button{
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px;
+    background: black;
+    color:white;
+    cursor:pointer;
+}
+
+.user-app .featuredTrainers {
+    text-align: center;
+    padding: 40px 20px 70px;
+}
+
+.user-app .trainer-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.user-app .trainer-card {
+    background: white;
+    width: 210px;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.user-app .trainer-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+
+.user-app .auth-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px;
+}
+
+.user-app .auth-card {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap:14px;
+}
+
+.user-app .auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.user-app .auth-card input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.user-app .auth-card button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #c2d8f7;
+    font-weight: bold;
+}
+
+.user-app .auth-card button:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+
+
+.user-app .dashboard {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.user-app .dashboard-cards {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.user-app .card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+
+.user-app .booking-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f9fafb;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.user-app .status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.user-app .status.pending { background: #fef3c7; }
+.user-app .status.confirmed { background: #d1fae5; }
+.user-app .status.completed { background: #e0e7ff; }
+
+
+
+.user-app .browse-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    max-width: 800px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.user-app .browse-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    min-height: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.user-app .browse-card img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.user-app .trainer-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 6px;
+}
+
+.user-app .trainer-info h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+ /*Bubble tags*/
+
+.user-app .tag-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+.user-app .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #eef4ff;
+    color: #1e3a8a;
+    border: 1px solid #dbe6ff;
+}
+
+.user-app .tag.price {
+    background: #eafff1;
+    color: #065f46;
+    border: 1px solid #bbf7d0;
+}
+
+.user-app .tag.location {
+    background: #fff3e6;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+}
+
+.user-app .tag.cert {
+    background: #f3e8ff;
+    color: #6b21a8;
+    border: 1px solid #e9d5ff;
+}
+
+.user-app .tag.rating {
+    background: #fff7cc;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+
+.user-app .trainer-page {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.user-app .trainer-profile-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.user-app .trainer-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.user-app .booking-section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+.user-app .review-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 12px;
+    border: 1px solid #eee;
+}
+
+.user-app .review-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-app .review-card {
+    width: 220px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+
+
+.user-app .rating {
+    margin-top: 6px;
+    font-weight: bold;
+    color: #f5b301; 
+}
+
+.user-app .rating span {
+    color: #555;
+}
+
+
+
+.user-app .book-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #c2d8f7;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.user-app footer {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+
+
+.user-app .auth-card input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex: unset; 
+}
+
+.user-app .auth-card form {
+    align-items: stretch;
+}
+
+.user-app .auth-card h3 {
+    margin-bottom: 10px;
+}
+
+
+
+.user-app .trainer-layout {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.user-app .trainer-profile-card {
+    flex: 2;
+    min-width: 320px;
+}
+
+
+.user-app .booking-section {
+    flex: 1;
+    min-width: 280px;
+}
+
+
+.user-app .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-app .booking-form input,
+.user-app .booking-form select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.user-app .booking-form button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.user-app .reviews-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.user-app .review-row {
+    margin-top: 20px;
+}
+
+.user-app .review-card {
+    text-align: left;
+}
+
+.user-app .review-text {
+    margin-bottom: 10px;
+}
+
+
+
+.user-app .dashboard {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+
+.user-app .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.user-app .primary-btn {
+    background: #c2d8f7;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+.user-app .panel {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+
+.user-app .booking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    margin-top: 12px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+
+.user-app .review-item {
+    background: #f9fafb;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.user-app .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+
+.user-app .dashboard h2 {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+
+
+.user-app .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.user-app .btn-primary {
+    background: #c2d8f7;
+    color: black;
+    border: 1px solid #b5cceb;
+}
+
+.user-app .btn-primary:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+.user-app .btn-secondary {
+    background: black;
+    color: white;
+}
+
+.user-app .btn-secondary:hover {
+    background: #333;
+}
+
+
+
+.user-app .leave-review-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    background: #1e3a8a;
+    color: white;
+    margin-left: 10px;
+    transition: 0.2s ease;
+}
+
+.user-app .leave-review-btn:hover {
+    background: #0f255f;
+}
+
+
+
+.user-app .trainer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.user-app .trainer-form input,
+.user-app .trainer-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.user-app .trainer-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.user-app .trainer-form button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-app .review-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 40px;
+}
+
+.user-app .review-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.user-app .session-box {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+
+.user-app .review-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.user-app .review-card select,
+.user-app .review-card textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+
+.user-app .review-card textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.user-app .review-card button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-app .review-card button:hover {
+    background: #333;
+}
+
+.user-app .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.user-app .profile-actions {
+    display: flex;
+    gap: 10px;
+}

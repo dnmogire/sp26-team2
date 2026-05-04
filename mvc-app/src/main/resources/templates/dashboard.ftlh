@@ -12,7 +12,10 @@
         <nav class="navigation">
             <a href="/provider/dashboard/${trainerId?c}" class="active">Dashboard</a>
             <a href="/provider/bookings/${trainerId?c}">Bookings</a>
+            <a href="/provider/services/${trainerId?c}">Services</a>
+            <a href="/provider/reviews/${trainerId?c}">Reviews</a>
             <a href="/provider/profile/${trainerId?c}">Profile</a>
+            <a href="/logout">Logout</a>
         </nav>
     </header>
 
@@ -36,6 +39,10 @@
                 <p class="stat-number">${confirmedBookings?size}</p>
             </div>
             <div class="stat-card">
+                <h3>Completed Sessions</h3>
+                <p class="stat-number">${completedBookings?size}</p>
+            </div>
+            <div class="stat-card">
                 <h3>Average Rating</h3>
                 <p class="stat-number">
                     <#if profile?? && profile.avgRating??>${profile.avgRating} ⭐<#else>N/A</#if>
@@ -46,6 +53,10 @@
                 <p class="stat-number">
                     <#if profile?? && profile.hourlyRate??>$${profile.hourlyRate?string["0.##"]}<#else>N/A</#if>
                 </p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Reviews</h3>
+                <p class="stat-number">${reviews?size}</p>
             </div>
         </section>
 
@@ -69,8 +80,28 @@
             </div>
         </section>
 
-        <div style="margin-top:30px; display:flex; gap:12px;">
+        <section class="sessions-section">
+            <h2>Recent Reviews</h2>
+            <div class="sessions-list">
+                <#if reviews?has_content>
+                    <#list reviews as review>
+                        <div class="session-item">
+                            <div class="session-info">
+                                <strong>${review.client.firstName} ${review.client.lastName}</strong>
+                                <p>${review.rating}/5 ⭐ — ${review.text!""}</p>
+                            </div>
+                        </div>
+                    </#list>
+                <#else>
+                    <p style="color:#888; padding:20px 0;">No reviews yet.</p>
+                </#if>
+            </div>
+        </section>
+
+        <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
             <a href="/provider/bookings/${trainerId?c}" class="btn btn-primary">Manage Bookings</a>
+            <a href="/provider/services/${trainerId?c}" class="btn btn-secondary">Manage Services</a>
+            <a href="/provider/reviews/${trainerId?c}" class="btn btn-secondary">View Reviews</a>
             <a href="/provider/profile/${trainerId?c}" class="btn btn-secondary">View Profile</a>
         </div>
     </main>

@@ -10,6 +10,8 @@ C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\model\Revie
 C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\model\Service.java
 C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\model\TrainerProfile.java
 C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\model\User.java
+C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\mvc\controller\AppUiController.java
+C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\mvc\controller\ClientUiController.java
 C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\repository\BookingRepository.java
 C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\repository\ReviewRepository.java
 C:\Users\David\sp26-team2\mvc-app\src\main\java\com\example\fitmatch\repository\ServiceRepository.java
