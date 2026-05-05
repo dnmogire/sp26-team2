@@ -12,7 +12,10 @@
         <nav class="navigation">
             <a href="/provider/dashboard/${trainerId?c}">Dashboard</a>
             <a href="/provider/bookings/${trainerId?c}">Bookings</a>
+            <a href="/provider/services/${trainerId?c}">Services</a>
+            <a href="/provider/reviews/${trainerId?c}">Reviews</a>
             <a href="/provider/profile/${trainerId?c}" class="active">Profile</a>
+            <a href="/logout">Logout</a>
         </nav>
     </header>
 
@@ -79,8 +82,29 @@
                 <p><strong>Hourly Rate:</strong> <#if profile.hourlyRate??>$${profile.hourlyRate?string["0.##"]}/hour<#else>N/A</#if></p>
             </section>
 
-            <div style="margin-top:20px; display:flex; gap:12px;">
+            <section class="section">
+                <h2>Client Reviews</h2>
+                <#if reviews?has_content>
+                    <#list reviews as review>
+                        <div class="booking-card">
+                            <div class="booking-header">
+                                <strong>${review.client.firstName} ${review.client.lastName}</strong>
+                                <span class="badge confirmed">${review.rating}/5 ⭐</span>
+                            </div>
+                            <p>${review.text!""}</p>
+                            <#if review.trainerReply??>
+                                <p style="color:#888; margin-top:8px;"><em>Your reply: ${review.trainerReply}</em></p>
+                            </#if>
+                        </div>
+                    </#list>
+                <#else>
+                    <p style="color:#888;">No reviews yet.</p>
+                </#if>
+            </section>
+
+            <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
                 <a href="/provider/profile/${trainerId?c}/edit" class="btn btn-primary">Edit Profile</a>
+                <a href="/provider/services/${trainerId?c}" class="btn btn-secondary">Manage Services</a>
                 <a href="/provider/dashboard/${trainerId?c}" class="btn btn-secondary">Back to Dashboard</a>
             </div>
         <#else>
