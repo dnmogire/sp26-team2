@@ -34,7 +34,7 @@
                     </div>
                     <p>${review.text!""}</p>
                     <p style="color:#888; font-size:0.85rem;">
-                        ${review.createdAt?string["MMM dd, yyyy"]}
+                        ${review.createdAt!""}
                     </p>
                     <#if review.trainerReply??>
                         <div style="background:#f0fdf4; border-left:3px solid #22c55e; padding:10px; margin-top:12px; border-radius:4px;">
