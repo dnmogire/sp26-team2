@@ -296,16 +296,15 @@ public class ClientUiController {
 
         List<Review> reviews = reviewRepo.findByTrainerId(trainerId);
 
-        double avg = Math.round(
-        reviews.stream()
+        TrainerProfile trainer = trainerRepo.findById(trainerId)
+                .orElseThrow(() -> new RuntimeException("Trainer not found"));
+
+        double avg = reviews.stream()
                 .mapToInt(Review::getRating)
                 .average()
-                .orElse(0.0) * 10.0
-        ) / 10.0;
+                .orElse(0.0);
 
-        TrainerProfile trainer = booking.getTrainer();
         trainer.setAvgRating(avg);
-
         trainerRepo.save(trainer);
 
         return "redirect:/profile";
